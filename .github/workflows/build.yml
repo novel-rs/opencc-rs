@@ -1,4 +1,4 @@
-name: Test
+name: Build
 
 on:
   push:
@@ -12,7 +12,7 @@ permissions:
   contents: read
 
 jobs:
-  test:
+  build:
     strategy:
       fail-fast: false
       matrix:
@@ -21,7 +21,7 @@ jobs:
           - os: macos-latest
           - os: windows-latest
 
-    name: Test
+    name: Build
     runs-on: ${{ matrix.platform.os }}
 
     steps:
