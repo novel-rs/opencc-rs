@@ -1,9 +1,10 @@
 # opencc-rs
 
-[![Test](https://github.com/novel-rs/opencc-rs/actions/workflows/test.yml/badge.svg)](https://github.com/novel-rs/opencc-rs/actions/workflows/test.yml)
-[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/novel-rs/opencc-rs/main.svg)](https://results.pre-commit.ci/latest/github/novel-rs/opencc-rs/main)
-[![Coverage Status](https://codecov.io/gh/novel-rs/opencc-rs/branch/main/graph/badge.svg?token=96TJ1OIF3P)](https://codecov.io/gh/novel-rs/opencc-rs)
-[![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
+[![build](https://github.com/novel-rs/opencc-rs/actions/workflows/build.yml/badge.svg)](https://github.com/novel-rs/opencc-rs/actions/workflows/build.yml)
+[![codecov](https://codecov.io/gh/novel-rs/opencc-rs/branch/main/graph/badge.svg?token=96TJ1OIF3P)](https://codecov.io/gh/novel-rs/opencc-rs)
+[![docs.rs](https://img.shields.io/docsrs/opencc-rs)](https://docs.rs/opencc-rs)
+[![Crates.io](https://img.shields.io/crates/l/opencc-rs)](https://github.com/novel-rs/opencc-rs)
+[![Crates.io](https://img.shields.io/crates/v/opencc-rs)](https://crates.io/crates/opencc-rs)
 
 ---
 
