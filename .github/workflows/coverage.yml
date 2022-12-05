@@ -36,7 +36,7 @@ jobs:
           components: llvm-tools-preview
 
       - name: Run cargo test
-        run: cargo test --workspace --locked --all-targets
+        run: cargo test --workspace --all-targets
 
       # https://github.com/mozilla/grcov
       - name: Generate lcov

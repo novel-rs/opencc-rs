@@ -33,4 +33,4 @@ jobs:
           components: clippy
 
       - name: Run Clippy
-        run: cargo clippy --workspace --locked --all-targets -- --deny clippy::all
+        run: cargo clippy --workspace --all-targets -- --deny clippy::all

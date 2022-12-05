@@ -47,8 +47,8 @@ jobs:
 
       - name: Run cargo build
         if: ${{ !startsWith(matrix.platform.target, 'x86_64') }}
-        run: cargo build --target ${{ matrix.platform.target }} --workspace --locked --all-targets
+        run: cargo build --target ${{ matrix.platform.target }} --workspace --all-targets
 
       - name: Run cargo test
         if: ${{ startsWith(matrix.platform.target, 'x86_64') }}
-        run: cargo test --target ${{ matrix.platform.target }} --workspace --locked --all-targets
+        run: cargo test --target ${{ matrix.platform.target }} --workspace --all-targets

@@ -42,4 +42,4 @@ jobs:
 
       # https://github.com/EmbarkStudios/cargo-deny
       - name: Run cargo-deny
-        run: cargo deny --workspace --locked check
+        run: cargo deny --workspace check
