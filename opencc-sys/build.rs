@@ -32,6 +32,10 @@ fn main() {
 
     marisa = marisa.join("build").join("deps").join("marisa-0.2.6");
     opencc = opencc.join("build").join("src");
+    if cfg!(host_family = "windows") {
+        marisa = marisa.join("Release");
+        opencc = opencc.join("Release");
+    }
 
     println!("cargo:rustc-link-search=native={}", marisa.display());
     println!("cargo:rustc-link-search=native={}", opencc.display());
