@@ -1,6 +1,6 @@
 [package]
 name = "opencc-rs"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 authors = ["Terakomari <im.terakomari@icloud.com>"]
@@ -15,7 +15,7 @@ categories = ["api-bindings", "localization"]
 [dependencies]
 # https://github.com/rust-lang/libc
 libc = "0.2.138"
-opencc-sys = { path = "opencc-sys", version = "0.1.1" }
+opencc-sys = { path = "opencc-sys", version = "0.1.2" }
 # https://github.com/Stebalien/tempfile
 tempfile = "3.3.0"
 # https://github.com/dtolnay/thiserror
