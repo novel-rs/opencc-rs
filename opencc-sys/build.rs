@@ -32,7 +32,7 @@ fn main() {
 
     marisa = marisa.join("build").join("deps").join("marisa-0.2.6");
     opencc = opencc.join("build").join("src");
-    if cfg!(host_family = "windows") {
+    if cfg!(target_os = "windows") {
         marisa = marisa.join("Release");
         opencc = opencc.join("Release");
     }
@@ -42,14 +42,16 @@ fn main() {
     println!("cargo:rustc-link-lib=static=marisa");
     println!("cargo:rustc-link-lib=static=opencc");
 
-    println!(
-        "cargo:rustc-link-lib={}",
-        if cfg!(target_os = "macos") {
-            "c++".to_string()
-        } else {
-            "stdc++".to_string()
-        }
-    );
+    if !cfg!(target_os = "windows") {
+        println!(
+            "cargo:rustc-link-lib={}",
+            if cfg!(target_os = "macos") {
+                "c++".to_string()
+            } else {
+                "stdc++".to_string()
+            }
+        );
+    }
 
     println!("cargo:rerun-if-changed=wrapper.h");
 

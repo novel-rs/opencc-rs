@@ -4,14 +4,14 @@
 
 use lazy_static::lazy_static;
 
-#[cfg(host_family = "windows")]
+#[cfg(target_os = "windows")]
 macro_rules! PATH_SEPARATOR {
     () => {
         r"\"
     };
 }
 
-#[cfg(not(host_family = "windows"))]
+#[cfg(not(target_os = "windows"))]
 macro_rules! PATH_SEPARATOR {
     () => {
         r"/"
