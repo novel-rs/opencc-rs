@@ -4,6 +4,8 @@
 
 use lazy_static::lazy_static;
 
+// TODO use std::path::MAIN_SEPARATOR_STR
+// https://doc.rust-lang.org/std/path/constant.MAIN_SEPARATOR_STR.html
 #[cfg(target_os = "windows")]
 macro_rules! PATH_SEPARATOR {
     () => {
