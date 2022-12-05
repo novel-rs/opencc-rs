@@ -1,0 +1,3 @@
+[submodule "opencc-sys/OpenCC"]
+path = opencc-sys/OpenCC
+url = https://github.com/BYVoid/OpenCC
