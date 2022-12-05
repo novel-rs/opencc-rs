@@ -1,6 +1,6 @@
 use std::fs;
 
-use opencc::{Config, OpenCC, OpenCCError};
+use opencc_rs::{Config, OpenCC, OpenCCError};
 use pretty_assertions::assert_eq;
 
 #[cfg(target_os = "windows")]
