@@ -5,7 +5,7 @@
 The commit message should be structured as follows:
 
 ```
-<type>[optional scope]: <description>
+<type>(<scope>): <subject>
 ```
 
 ### Type
@@ -19,9 +19,8 @@ Must be one of the following:
   semi-colons, etc)
 - **refactor**: A code change that neither fixes a bug nor adds a feature
 - **perf**: A code change that improves performance
-- **test**: Adding missing tests or correcting existing tests
-- **build**: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
-- **ci**: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
-- **chore**: Other changes that don't modify `src` or `test` files
+- **test**: Adding missing or correcting existing tests
+- **chore**: Changes to the build process or auxiliary tools and libraries such as documentation
+  generation
 
-For more detailed information, please refer to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+For more detailed information, please refer to [AngularJS's commit message convention](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines)
