@@ -2,9 +2,13 @@ name: Coverage
 
 on:
   push:
+    branches:
+      - main
     paths-ignore:
       - "**.md"
   pull_request:
+    branches:
+      - main
     paths-ignore:
       - "**.md"
 
@@ -51,4 +55,4 @@ jobs:
         uses: codecov/codecov-action@v3
         with:
           files: lcov.info
-          fail_ci_if_error: true
+          fail_ci_if_error: false
