@@ -183,12 +183,18 @@ impl Config {
     }
 }
 
+/// OpenCC error
 #[derive(Error, Debug)]
 pub enum OpenCCError {
     #[error("Failed to create opencc instance")]
+    /// Failed to create opencc instance
     CreateFailed,
+
     #[error("Failed to convert the string")]
+    /// Failed to convert the string
     ConvertFailed,
+
     #[error("IO error")]
+    /// IO error
     IOFailed(#[from] io::Error),
 }
