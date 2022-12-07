@@ -189,3 +189,15 @@ fn tw2t() -> Result<(), OpenCCError> {
 
     Ok(())
 }
+
+#[test]
+fn t2tw() -> Result<(), OpenCCError> {
+    let opencc = OpenCC::new(Config::T2TW)?;
+
+    let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2t.ans"))?;
+    let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2t.in"))?;
+
+    assert_eq!(opencc.convert(&input)?, output);
+
+    Ok(())
+}
