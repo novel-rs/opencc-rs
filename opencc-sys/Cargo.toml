@@ -15,8 +15,8 @@ links = "opencc"
 build = "build.rs"
 
 [dependencies]
-# https://github.com/rust-lang-nursery/lazy-static.rs
-lazy_static = "1.4.0"
+# https://github.com/matklad/once_cell
+once_cell = { version = "1.16.0", features = ["parking_lot"] }
 
 [build-dependencies]
 # https://github.com/rust-lang/cmake-rs
