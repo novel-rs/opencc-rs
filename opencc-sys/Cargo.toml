@@ -15,6 +15,8 @@ links = "opencc"
 build = "build.rs"
 
 [dependencies]
+# https://github.com/dtolnay/link-cplusplus
+link-cplusplus = "1.0.8"
 # https://github.com/matklad/once_cell
 once_cell = { version = "1.16.0", features = ["parking_lot"] }
 

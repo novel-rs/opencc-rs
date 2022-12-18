@@ -13,13 +13,14 @@ keywords = ["opencc", "chinese", "traditional"]
 categories = ["api-bindings", "localization"]
 
 [dependencies]
+opencc-sys = { path = "opencc-sys", version = "0.1.4" }
+
 # https://github.com/rust-lang/libc
 libc = "0.2.138"
-opencc-sys = { path = "opencc-sys", version = "0.1.4" }
 # https://github.com/Stebalien/tempfile
 tempfile = "3.3.0"
 # https://github.com/dtolnay/thiserror
-thiserror = "1.0.37"
+thiserror = "1.0.38"
 
 [dev-dependencies]
 # https://github.com/rust-pretty-assertions/rust-pretty-assertions

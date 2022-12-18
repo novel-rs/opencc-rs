@@ -42,17 +42,6 @@ fn main() {
     println!("cargo:rustc-link-lib=static=marisa");
     println!("cargo:rustc-link-lib=static=opencc");
 
-    if !cfg!(target_os = "windows") {
-        println!(
-            "cargo:rustc-link-lib={}",
-            if cfg!(target_os = "macos") {
-                "c++".to_string()
-            } else {
-                "stdc++".to_string()
-            }
-        );
-    }
-
     println!("cargo:rerun-if-changed=wrapper.h");
 
     let bindings = Builder::default()

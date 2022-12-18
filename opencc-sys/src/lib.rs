@@ -2,6 +2,8 @@
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
 
+extern crate link_cplusplus;
+
 use once_cell::sync::Lazy;
 
 // TODO use std::path::MAIN_SEPARATOR_STR
