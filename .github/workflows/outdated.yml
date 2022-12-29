@@ -42,7 +42,7 @@ jobs:
 
       # https://github.com/taiki-e/install-action
       - name: Install cargo-outdated
-        uses: taiki-e/install-action@v1
+        uses: taiki-e/install-action@v2
         with:
           tool: cargo-outdated
 
