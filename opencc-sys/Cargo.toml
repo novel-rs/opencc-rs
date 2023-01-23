@@ -1,6 +1,6 @@
 [package]
 name = "opencc-sys"
-version = "0.1.4+1.1.6"
+version = "0.1.5+1.1.6"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 authors = ["Terakomari <im.terakomari@icloud.com>"]
@@ -24,4 +24,7 @@ once_cell = { version = "1.16.0", features = ["parking_lot"] }
 # https://github.com/rust-lang/cmake-rs
 cmake = "0.1.49"
 # https://github.com/rust-lang/rust-bindgen
-bindgen = "0.63.0"
+bindgen = { version = "0.63.0", default-features = false, features = [
+  "runtime",
+  "which-rustfmt",
+] }
