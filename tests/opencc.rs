@@ -1,6 +1,6 @@
 use std::fs;
 
-use opencc_rs::{Config, OpenCC, OpenCCError};
+use opencc_rs::{Config, Error, OpenCC};
 use pretty_assertions::assert_eq;
 
 #[cfg(target_os = "windows")]
@@ -35,169 +35,184 @@ macro_rules! TESTCASES_PREFIX {
 }
 
 #[test]
-fn hk2s() -> Result<(), OpenCCError> {
-    let opencc = OpenCC::new(Config::HK2S)?;
+fn hk2s() -> Result<(), Error> {
+    let opencc = OpenCC::new(vec![Config::HK2S])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "hk2s.in"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "hk2s.ans"))?;
 
-    assert_eq!(opencc.convert(&input)?, output);
+    assert_eq!(opencc.convert(input)?, output);
 
     Ok(())
 }
 
 #[test]
-fn hk2t() -> Result<(), OpenCCError> {
-    let opencc = OpenCC::new(Config::HK2T)?;
+fn hk2t() -> Result<(), Error> {
+    let opencc = OpenCC::new(vec![Config::HK2T])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "hk2t.in"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "hk2t.ans"))?;
 
-    assert_eq!(opencc.convert(&input)?, output);
+    assert_eq!(opencc.convert(input)?, output);
 
     Ok(())
 }
 
 #[test]
-fn jp2t() -> Result<(), OpenCCError> {
-    let opencc = OpenCC::new(Config::JP2T)?;
+fn jp2t() -> Result<(), Error> {
+    let opencc = OpenCC::new(vec![Config::JP2T])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "jp2t.in"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "jp2t.ans"))?;
 
-    assert_eq!(opencc.convert(&input)?, output);
+    assert_eq!(opencc.convert(input)?, output);
 
     Ok(())
 }
 
 #[test]
-fn s2hk() -> Result<(), OpenCCError> {
-    let opencc = OpenCC::new(Config::S2HK)?;
+fn s2hk() -> Result<(), Error> {
+    let opencc = OpenCC::new(vec![Config::S2HK])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2hk.in"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2hk.ans"))?;
 
-    assert_eq!(opencc.convert(&input)?, output);
+    assert_eq!(opencc.convert(input)?, output);
 
     Ok(())
 }
 
 #[test]
-fn s2t() -> Result<(), OpenCCError> {
-    let opencc = OpenCC::new(Config::S2T)?;
+fn s2t() -> Result<(), Error> {
+    let opencc = OpenCC::new(vec![Config::S2T])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2t.in"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2t.ans"))?;
 
-    assert_eq!(opencc.convert(&input)?, output);
+    assert_eq!(opencc.convert(input)?, output);
 
     Ok(())
 }
 
 #[test]
-fn s2tw() -> Result<(), OpenCCError> {
-    let opencc = OpenCC::new(Config::S2TW)?;
+fn s2tw() -> Result<(), Error> {
+    let opencc = OpenCC::new(vec![Config::S2TW])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2tw.in"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2tw.ans"))?;
 
-    assert_eq!(opencc.convert(&input)?, output);
+    assert_eq!(opencc.convert(input)?, output);
 
     Ok(())
 }
 
 #[test]
-fn s2twp() -> Result<(), OpenCCError> {
-    let opencc = OpenCC::new(Config::S2TWP)?;
+fn s2twp() -> Result<(), Error> {
+    let opencc = OpenCC::new(vec![Config::S2TWP])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2twp.in"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2twp.ans"))?;
 
-    assert_eq!(opencc.convert(&input)?, output);
+    assert_eq!(opencc.convert(input)?, output);
 
     Ok(())
 }
 
 #[test]
-fn t2hk() -> Result<(), OpenCCError> {
-    let opencc = OpenCC::new(Config::T2HK)?;
+fn t2hk() -> Result<(), Error> {
+    let opencc = OpenCC::new(vec![Config::T2HK])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "t2hk.in"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "t2hk.ans"))?;
 
-    assert_eq!(opencc.convert(&input)?, output);
+    assert_eq!(opencc.convert(input)?, output);
 
     Ok(())
 }
 
 #[test]
-fn t2jp() -> Result<(), OpenCCError> {
-    let opencc = OpenCC::new(Config::T2JP)?;
+fn t2jp() -> Result<(), Error> {
+    let opencc = OpenCC::new(vec![Config::T2JP])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "t2jp.in"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "t2jp.ans"))?;
 
-    assert_eq!(opencc.convert(&input)?, output);
+    assert_eq!(opencc.convert(input)?, output);
 
     Ok(())
 }
 
 #[test]
-fn t2s() -> Result<(), OpenCCError> {
-    let opencc = OpenCC::new(Config::T2S)?;
+fn t2s() -> Result<(), Error> {
+    let opencc = OpenCC::new(vec![Config::T2S])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "t2s.in"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "t2s.ans"))?;
 
-    assert_eq!(opencc.convert(&input)?, output);
+    assert_eq!(opencc.convert(input)?, output);
 
     Ok(())
 }
 
 #[test]
-fn tw2s() -> Result<(), OpenCCError> {
-    let opencc = OpenCC::new(Config::TW2S)?;
+fn tw2s() -> Result<(), Error> {
+    let opencc = OpenCC::new(vec![Config::TW2S])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2s.in"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2s.ans"))?;
 
-    assert_eq!(opencc.convert(&input)?, output);
+    assert_eq!(opencc.convert(input)?, output);
 
     Ok(())
 }
 
 #[test]
-fn tw2sp() -> Result<(), OpenCCError> {
-    let opencc = OpenCC::new(Config::TW2SP)?;
+fn tw2sp() -> Result<(), Error> {
+    let opencc = OpenCC::new(vec![Config::TW2SP])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2sp.in"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2sp.ans"))?;
 
-    assert_eq!(opencc.convert(&input)?, output);
+    assert_eq!(opencc.convert(input)?, output);
 
     Ok(())
 }
 
 #[test]
-fn tw2t() -> Result<(), OpenCCError> {
-    let opencc = OpenCC::new(Config::TW2T)?;
+fn tw2t() -> Result<(), Error> {
+    let opencc = OpenCC::new(vec![Config::TW2T])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2t.in"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2t.ans"))?;
 
-    assert_eq!(opencc.convert(&input)?, output);
+    assert_eq!(opencc.convert(input)?, output);
 
     Ok(())
 }
 
 #[test]
-fn t2tw() -> Result<(), OpenCCError> {
-    let opencc = OpenCC::new(Config::T2TW)?;
+fn t2tw() -> Result<(), Error> {
+    let opencc = OpenCC::new(vec![Config::T2TW])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2t.ans"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2t.in"))?;
 
-    assert_eq!(opencc.convert(&input)?, output);
+    assert_eq!(opencc.convert(input)?, output);
+
+    Ok(())
+}
+
+#[test]
+fn jp2t2s() -> Result<(), Error> {
+    let opencc = OpenCC::new(vec![Config::JP2T, Config::T2S])?;
+
+    let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "jp2t.in"))?;
+    let output = r"旧字体历史假名遣 新字体现代假名遣
+横滨 丝鱼川 伊豫国
+驿辨当 辨别 辩护士 瓣膜
+艺术 缺航 欠缺 饮料罐";
+
+    assert_eq!(opencc.convert(input)?, output);
 
     Ok(())
 }

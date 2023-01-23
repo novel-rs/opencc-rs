@@ -12,48 +12,69 @@ use thiserror::Error;
 
 /// OpenCC bindings for Rust.
 pub struct OpenCC {
-    opencc: *mut c_void,
+    openccs: Vec<*mut c_void>,
 }
 
 impl OpenCC {
     /// Create a new OpenCC instance with the given configuration
-    pub fn new(config: Config) -> Result<OpenCC, OpenCCError> {
-        let config_data = config.get_data();
-        let dir = tempdir()?;
-        for item in &config_data {
-            let file_path = dir.path().join(item.filename);
-            write(file_path, item.content)?;
+    pub fn new(configs: Vec<Config>) -> Result<OpenCC, Error> {
+        let mut openccs = Vec::new();
+
+        for config in configs {
+            let config_data = config.get_data();
+            let dir = tempdir()?;
+            for item in &config_data {
+                let file_path = dir.path().join(item.filename);
+                write(file_path, item.content)?;
+            }
+
+            let config_file_path = dir.path().join(config_data[0].filename);
+            let config_file_path = CString::new(config_file_path.to_str().unwrap()).unwrap();
+
+            let opencc = unsafe { opencc_sys::opencc_open(config_file_path.as_ptr()) };
+
+            let v = opencc as uintptr_t;
+            if v == !0 {
+                return Err(Error::Create);
+            }
+
+            openccs.push(opencc)
         }
 
-        let config_file_path = dir.path().join(config_data[0].filename);
-        let config_file_path = CString::new(config_file_path.to_str().unwrap()).unwrap();
-
-        let opencc = unsafe { opencc_sys::opencc_open(config_file_path.as_ptr()) };
-
-        let v = opencc as uintptr_t;
-        if v == !0 {
-            return Err(OpenCCError::CreateFailed);
-        }
-
-        Ok(OpenCC { opencc })
+        Ok(OpenCC { openccs })
     }
 
     /// Convert a string to another string.
-    pub fn convert(&self, input: &str) -> Result<String, OpenCCError> {
-        let length = input.len();
-        let input = CString::new(input).unwrap();
+    pub fn convert<T>(&self, input: T) -> Result<String, Error>
+    where
+        T: AsRef<str>,
+    {
+        let mut length = input.as_ref().len();
+        let input = CString::new(input.as_ref()).unwrap();
+        let mut result_ptr = input.as_ptr().cast_mut();
 
-        let result_ptr =
-            unsafe { opencc_sys::opencc_convert_utf8(self.opencc, input.as_ptr(), length) };
-        if result_ptr.is_null() {
-            return Err(OpenCCError::ConvertFailed);
+        let mut free = Vec::new();
+
+        for opencc in &self.openccs {
+            result_ptr = unsafe { opencc_sys::opencc_convert_utf8(*opencc, result_ptr, length) };
+            if result_ptr.is_null() {
+                return Err(Error::Convert);
+            }
+
+            free.push(result_ptr);
+
+            if self.openccs.len() > 1 {
+                length = unsafe { libc::strlen(result_ptr) };
+            }
         }
 
         let result_cstr = unsafe { CStr::from_ptr(result_ptr) };
         let result = unsafe { std::str::from_utf8_unchecked(result_cstr.to_bytes()).to_string() };
 
-        unsafe {
-            opencc_sys::opencc_convert_utf8_free(result_ptr);
+        for ptr in free {
+            unsafe {
+                opencc_sys::opencc_convert_utf8_free(ptr);
+            }
         }
 
         Ok(result)
@@ -62,9 +83,11 @@ impl OpenCC {
 
 impl Drop for OpenCC {
     fn drop(&mut self) {
-        if !self.opencc.is_null() {
-            unsafe {
-                opencc_sys::opencc_close(self.opencc);
+        for opencc in &self.openccs {
+            if !opencc.is_null() {
+                unsafe {
+                    opencc_sys::opencc_close(*opencc);
+                }
             }
         }
     }
@@ -184,17 +207,17 @@ impl Config {
 }
 
 /// OpenCC error
-#[derive(Error, Debug)]
-pub enum OpenCCError {
-    #[error("Failed to create opencc instance")]
+#[derive(Debug, Error)]
+pub enum Error {
     /// Failed to create opencc instance
-    CreateFailed,
+    #[error("Failed to create opencc instance")]
+    Create,
 
-    #[error("Failed to convert the string")]
     /// Failed to convert the string
-    ConvertFailed,
+    #[error("Failed to convert the string")]
+    Convert,
 
-    #[error("IO error")]
     /// IO error
-    IOFailed(#[from] io::Error),
+    #[error(transparent)]
+    StdIO(#[from] io::Error),
 }
