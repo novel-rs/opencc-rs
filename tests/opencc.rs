@@ -207,10 +207,7 @@ fn jp2t2s() -> Result<(), Error> {
     let opencc = OpenCC::new(vec![Config::JP2T, Config::T2S])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "jp2t.in"))?;
-    let output = r"旧字体历史假名遣 新字体现代假名遣
-横滨 丝鱼川 伊豫国
-驿辨当 辨别 辩护士 瓣膜
-艺术 缺航 欠缺 饮料罐";
+    let output = include_str!("jp2t2s.ans").trim();
 
     assert_eq!(opencc.convert(input)?, output);
 
