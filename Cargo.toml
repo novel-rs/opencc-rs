@@ -16,7 +16,7 @@ categories = ["api-bindings", "localization"]
 opencc-sys = { path = "opencc-sys", version = "0.1.5" }
 
 # https://github.com/rust-lang/libc
-libc = "0.2.138"
+libc = "0.2.139"
 # https://github.com/Stebalien/tempfile
 tempfile = "3.3.0"
 # https://github.com/dtolnay/thiserror
