@@ -1,9 +1,9 @@
 name: Publish
 
 on:
-  release:
-    # # https://stackoverflow.com/questions/59319281/github-action-different-between-release-created-and-published
-    types: [published]
+  push:
+    tags:
+      - "*"
 
 permissions:
   contents: read
@@ -34,10 +34,10 @@ jobs:
           toolchain: stable
 
       - name: Publish opencc-sys
-        if: ${{ startsWith(github.event.release.tag_name, 'opencc-sys') }}
+        if: ${{ startsWith(github.ref_name, 'opencc-sys') }}
         run: cargo publish --token ${{ secrets.CARGO_REGISTRY_TOKEN }}
         working-directory: opencc-sys
 
       - name: Publish opencc-rs
-        if: ${{ startsWith(github.event.release.tag_name, 'opencc-rs') }}
+        if: ${{ startsWith(github.ref_name, 'opencc-rs') }}
         run: cargo publish --token ${{ secrets.CARGO_REGISTRY_TOKEN }}

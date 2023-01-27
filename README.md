@@ -9,3 +9,11 @@
 ---
 
 OpenCC bindings for Rust
+
+## Contributing
+
+You should read [CONTRIBUTING](https://github.com/novel-rs/opencc-rs/blob/main/CONTRIBUTING.md) first
+
+## License
+
+All the code in this repository is released under **[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)** and **[MIT license](https://opensource.org/licenses/MIT)**
