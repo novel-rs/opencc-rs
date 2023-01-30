@@ -17,10 +17,13 @@ pub struct OpenCC {
 
 impl OpenCC {
     /// Create a new OpenCC instance with the given configuration
-    pub fn new(configs: Vec<Config>) -> Result<OpenCC, Error> {
+    pub fn new<T>(configs: T) -> Result<OpenCC, Error>
+    where
+        T: AsRef<[Config]>,
+    {
         let mut openccs = Vec::new();
 
-        for config in configs {
+        for config in configs.as_ref() {
             let config_data = config.get_data();
             let dir = tempdir()?;
             for item in &config_data {
