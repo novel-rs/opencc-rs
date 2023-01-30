@@ -41,14 +41,7 @@ macro_rules! JSON_PREFIX {
 
 macro_rules! OCD2_PREFIX {
     () => {
-        concat!(
-            env!("OUT_DIR"),
-            PATH_SEPARATOR!(),
-            "build",
-            PATH_SEPARATOR!(),
-            "data",
-            PATH_SEPARATOR!()
-        )
+        concat!("assets", PATH_SEPARATOR!())
     };
 }
 

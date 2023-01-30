@@ -28,7 +28,6 @@ fn main() {
 
     let mut marisa = cfg.build_target("marisa").build();
     let mut opencc = cfg.build_target("libopencc").build();
-    cfg.build_target("Dictionaries").build();
 
     marisa = marisa.join("build").join("deps").join("marisa-0.2.6");
     opencc = opencc.join("build").join("src");
