@@ -37,7 +37,8 @@ jobs:
       - name: Check semver
         if: ${{ startsWith(github.ref_name, 'opencc-sys') }}
         uses: obi1kenobi/cargo-semver-checks-action@v1
-        working-directory: opencc-sys
+        with:
+          crate-name: opencc-sys
 
       - name: Publish opencc-sys
         if: ${{ startsWith(github.ref_name, 'opencc-sys') }}
@@ -48,6 +49,8 @@ jobs:
       - name: Check semver
         if: ${{ startsWith(github.ref_name, 'opencc-rs') }}
         uses: obi1kenobi/cargo-semver-checks-action@v1
+        with:
+          crate-name: opencc-rs
 
       - name: Publish opencc-rs
         if: ${{ startsWith(github.ref_name, 'opencc-rs') }}
