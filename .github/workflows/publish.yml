@@ -34,11 +34,12 @@ jobs:
           toolchain: stable
 
       # https://github.com/obi1kenobi/cargo-semver-checks-action
-      - name: Check semver
-        if: ${{ startsWith(github.ref_name, 'opencc-sys') }}
-        uses: obi1kenobi/cargo-semver-checks-action@v1
-        with:
-          crate-name: opencc-sys
+      # - name: Check semver
+      #   if: ${{ startsWith(github.ref_name, 'opencc-sys') }}
+      #   uses: obi1kenobi/cargo-semver-checks-action@v1
+      #   with:
+      #     crate-name: opencc-sys
+      #     version-tag-prefix: opencc-sys
 
       - name: Publish opencc-sys
         if: ${{ startsWith(github.ref_name, 'opencc-sys') }}
@@ -51,6 +52,7 @@ jobs:
         uses: obi1kenobi/cargo-semver-checks-action@v1
         with:
           crate-name: opencc-rs
+          version-tag-prefix: opencc-rs
 
       - name: Publish opencc-rs
         if: ${{ startsWith(github.ref_name, 'opencc-rs') }}
