@@ -16,13 +16,16 @@ build = "build.rs"
 
 [dependencies]
 # https://github.com/dtolnay/link-cplusplus
-link-cplusplus = "1.0.8"
+link-cplusplus = { version = "1.0.8", default-features = false }
 # https://github.com/matklad/once_cell
-once_cell = { version = "1.16.0", features = ["parking_lot"] }
+once_cell = { version = "1.17.0", default-features = false, features = [
+  "std",
+  "parking_lot",
+] }
 
 [build-dependencies]
 # https://github.com/rust-lang/cmake-rs
-cmake = "0.1.49"
+cmake = { version = "0.1.49", default-features = false }
 # https://github.com/rust-lang/rust-bindgen
 bindgen = { version = "0.63.0", default-features = false, features = [
   "runtime",
