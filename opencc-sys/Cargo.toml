@@ -18,7 +18,7 @@ build = "build.rs"
 # https://github.com/dtolnay/link-cplusplus
 link-cplusplus = { version = "1.0.8", default-features = false }
 # https://github.com/matklad/once_cell
-once_cell = { version = "1.17.0", default-features = false, features = [
+once_cell = { version = "1.17.1", default-features = false, features = [
   "std",
   "parking_lot",
 ] }
@@ -27,7 +27,7 @@ once_cell = { version = "1.17.0", default-features = false, features = [
 # https://github.com/rust-lang/cmake-rs
 cmake = { version = "0.1.49", default-features = false }
 # https://github.com/rust-lang/rust-bindgen
-bindgen = { version = "0.63.0", default-features = false, features = [
+bindgen = { version = "0.64.0", default-features = false, features = [
   "runtime",
   "which-rustfmt",
 ] }
