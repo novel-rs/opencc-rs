@@ -13,7 +13,7 @@ keywords = ["opencc", "chinese", "traditional"]
 categories = ["api-bindings", "localization"]
 
 [dependencies]
-opencc-sys = { path = "opencc-sys", version = "0.1.6" }
+opencc-sys = { path = "opencc-sys", version = "0.1.7" }
 
 # https://github.com/rust-lang/libc
 libc = { version = "0.2.139", default-features = false, features = ["std"] }
