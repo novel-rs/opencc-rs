@@ -18,7 +18,7 @@ opencc-sys = { path = "opencc-sys", version = "0.1.7" }
 # https://github.com/rust-lang/libc
 libc = { version = "0.2.139", default-features = false, features = ["std"] }
 # https://github.com/Stebalien/tempfile
-tempfile = { version = "3.3.0", default-features = false }
+tempfile = { version = "3.4.0", default-features = false }
 # https://github.com/dtolnay/thiserror
 thiserror = { version = "1.0.38", default-features = false }
 
