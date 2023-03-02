@@ -10,6 +10,17 @@
 
 OpenCC bindings for Rust
 
+## Platform
+
+- Windows
+- Linux
+- macOS
+
+## Dependencies
+
+- Clang
+- CMake
+
 ## Contributing
 
 You should read [CONTRIBUTING](https://github.com/novel-rs/opencc-rs/blob/main/CONTRIBUTING.md) first
