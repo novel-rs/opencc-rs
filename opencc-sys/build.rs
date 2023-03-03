@@ -7,6 +7,13 @@ fn main() {
 
     let build_type = "Release";
 
+    let is_python3 = env::var("PYTHON3").is_ok();
+
+    let mut python_executable = format!("${{{s}}}", s = "PYTHON");
+    if is_python3 {
+        python_executable = format!("${{{s}}}", s = "PYTHON3");
+    }
+
     cfg = cfg
         .define("CMAKE_BUILD_TYPE", build_type)
         .define("BUILD_DOCUMENTATION", "OFF")
@@ -23,6 +30,7 @@ fn main() {
         .define("USE_SYSTEM_PYBIND11", "OFF")
         .define("USE_SYSTEM_RAPIDJSON", "OFF")
         .define("USE_SYSTEM_TCLAP", "OFF")
+        .define("PYTHON_EXECUTABLE", python_executable)
         .profile(build_type)
         .very_verbose(true);
 
