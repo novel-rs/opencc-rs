@@ -20,7 +20,7 @@ OpenCC bindings for Rust
 
 - Clang
 - CMake
-- PYTHON / PYTHON3
+- Python / Python3
 
 ## Contributing
 
