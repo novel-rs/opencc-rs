@@ -10,7 +10,7 @@ use libc::uintptr_t;
 use tempfile::tempdir;
 use thiserror::Error;
 
-/// OpenCC bindings for Rust.
+/// OpenCC bindings for Rust
 pub struct OpenCC {
     openccs: Vec<*mut c_void>,
 }
@@ -47,7 +47,7 @@ impl OpenCC {
         Ok(OpenCC { openccs })
     }
 
-    /// Convert a string to another string.
+    /// Convert a string to another string
     pub fn convert<T>(&self, input: T) -> Result<String, Error>
     where
         T: AsRef<str>,
@@ -100,7 +100,7 @@ unsafe impl Send for OpenCC {}
 
 unsafe impl Sync for OpenCC {}
 
-/// Configurations.
+/// Configurations
 pub enum Config {
     /// Traditional Chinese (Hong Kong Standard) to Simplified Chinese
     HK2S,
