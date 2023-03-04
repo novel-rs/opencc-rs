@@ -12,8 +12,11 @@ readme = "README.md"
 keywords = ["opencc", "chinese", "traditional"]
 categories = ["api-bindings", "localization"]
 
+[workspace]
+members = ["opencc-sys", "."]
+
 [dependencies]
-opencc-sys = { path = "opencc-sys", version = "0.1.7" }
+opencc-sys = { version = "0.1.7", path = "opencc-sys" }
 
 # https://github.com/rust-lang/libc
 libc = { version = "0.2.139", default-features = false, features = ["std"] }
