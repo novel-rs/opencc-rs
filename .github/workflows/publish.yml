@@ -40,12 +40,12 @@ jobs:
           tool: cargo-semver-checks
 
       # https://github.com/obi1kenobi/cargo-semver-checks-action
-      # - name: Check semver
-      #   if: ${{ startsWith(github.ref_name, 'opencc-sys') }}
-      #   uses: obi1kenobi/cargo-semver-checks-action@v1
-      #   with:
-      #     crate-name: opencc-sys
-      #     version-tag-prefix: opencc-sys-
+      - name: Check semver
+        if: ${{ startsWith(github.ref_name, 'opencc-sys') }}
+        uses: obi1kenobi/cargo-semver-checks-action@v1
+        with:
+          crate-name: opencc-sys
+          version-tag-prefix: opencc-sys-
 
       - name: Publish opencc-sys
         if: ${{ startsWith(github.ref_name, 'opencc-sys') }}
@@ -53,12 +53,12 @@ jobs:
         working-directory: opencc-sys
 
       # https://github.com/obi1kenobi/cargo-semver-checks-action
-      # - name: Check semver
-      #   if: ${{ startsWith(github.ref_name, 'opencc-rs') }}
-      #   uses: obi1kenobi/cargo-semver-checks-action@v1
-      #   with:
-      #     crate-name: opencc-rs
-      #     version-tag-prefix: opencc-rs-
+      - name: Check semver
+        if: ${{ startsWith(github.ref_name, 'opencc-rs') }}
+        uses: obi1kenobi/cargo-semver-checks-action@v1
+        with:
+          crate-name: opencc-rs
+          version-tag-prefix: opencc-rs-
 
       - name: Publish opencc-rs
         if: ${{ startsWith(github.ref_name, 'opencc-rs') }}
