@@ -4,7 +4,13 @@
 
 - refactor: change the parameters of OpenCC::new
 
-[Full Changelog](https://github.com/novel-rs/opencc-rs/compare/opencc-sys-0.1.6+1.1.6...opencc-rs-0.3.0)
+[Full Changelog](https://github.com/novel-rs/opencc-rs/compare/opencc-rs-0.2.0...opencc-rs-0.3.0)
+
+## opencc-sys-0.1.7+1.1.6
+
+- fix: build failed without python env on macos
+
+[Full Changelog](https://github.com/novel-rs/opencc-rs/compare/opencc-sys-0.1.6+1.1.6...opencc-sys-0.1.7+1.1.6)
 
 ## opencc-sys-0.1.6+1.1.6
 
