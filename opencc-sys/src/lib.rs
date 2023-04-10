@@ -6,8 +6,6 @@ extern crate link_cplusplus;
 
 use once_cell::sync::Lazy;
 
-// TODO use std::path::MAIN_SEPARATOR_STR
-// https://doc.rust-lang.org/std/path/constant.MAIN_SEPARATOR_STR.html
 #[cfg(target_os = "windows")]
 macro_rules! PATH_SEPARATOR {
     () => {
