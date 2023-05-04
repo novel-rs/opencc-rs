@@ -19,7 +19,7 @@ members = ["opencc-sys", "."]
 opencc-sys = { version = "0.1.7", path = "opencc-sys" }
 
 # https://github.com/rust-lang/libc
-libc = { version = "0.2.141", default-features = false, features = ["std"] }
+libc = { version = "0.2.142", default-features = false, features = ["std"] }
 # https://github.com/Stebalien/tempfile
 tempfile = { version = "3.5.0", default-features = false }
 # https://github.com/dtolnay/thiserror
