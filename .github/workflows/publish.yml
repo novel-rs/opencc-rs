@@ -33,12 +33,6 @@ jobs:
         with:
           toolchain: stable
 
-      # https://github.com/taiki-e/install-action
-      - name: Install cargo-semver-checks
-        uses: taiki-e/install-action@v2
-        with:
-          tool: cargo-semver-checks
-
       # https://github.com/obi1kenobi/cargo-semver-checks-action
       - name: Check semver
         if: ${{ startsWith(github.ref_name, 'opencc-sys') }}
