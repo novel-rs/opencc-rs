@@ -7,6 +7,10 @@ fmt:
 update:
     cargo upgrade
     cargo update
+    cd opencc-sys
+    cargo upgrade
+    cargo update
+    cd ..
 
 check:
     pre-commit run --all-files
@@ -25,3 +29,7 @@ build:
 
 test:
     cargo test --workspace --all-targets
+
+changelog:
+    git cliff -o CHANGELOG.md
+    prettier --write CHANGELOG.md
