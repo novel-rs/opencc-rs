@@ -40,6 +40,13 @@ jobs:
         with:
           package: opencc-sys
 
+      # https://github.com/JesseTG/rm
+      - name: Remove File
+        if: ${{ startsWith(github.ref_name, 'opencc-sys') }}
+        uses: JesseTG/rm@v1.0.3
+        with:
+          path: semver-checks
+
       - name: Publish opencc-sys
         if: ${{ startsWith(github.ref_name, 'opencc-sys') }}
         run: cargo publish --token ${{ secrets.CARGO_REGISTRY_TOKEN }}
@@ -51,6 +58,13 @@ jobs:
         uses: obi1kenobi/cargo-semver-checks-action@v2
         with:
           package: opencc-rs
+
+      # https://github.com/JesseTG/rm
+      - name: Remove File
+        if: ${{ startsWith(github.ref_name, 'opencc-rs') }}
+        uses: JesseTG/rm@v1.0.3
+        with:
+          path: semver-checks
 
       - name: Publish opencc-rs
         if: ${{ startsWith(github.ref_name, 'opencc-rs') }}
