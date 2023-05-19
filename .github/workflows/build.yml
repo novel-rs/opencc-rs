@@ -54,9 +54,16 @@ jobs:
           toolchain: stable
           targets: ${{ matrix.target }}
 
+      # https://github.com/taiki-e/install-action
+      - name: Install cargo-nextest
+        if: ${{ startsWith(matrix.target, 'x86_64') }}
+        uses: taiki-e/install-action@v2
+        with:
+          tool: cargo-nextest
+
       - name: Run cargo build
         run: cargo build --workspace --all-targets --target ${{ matrix.target }}
 
-      - name: Run cargo test
+      - name: Run cargo-nextest
         if: ${{ startsWith(matrix.target, 'x86_64') }}
-        run: cargo test --workspace --all-targets --target ${{ matrix.target }}
+        run: cargo nextest run --workspace --all-targets --target ${{ matrix.target }}
