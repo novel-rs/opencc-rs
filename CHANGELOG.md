@@ -10,6 +10,12 @@ All notable changes to this project will be documented in this file.
 
 ### <!-- 7 -->⚙️ Miscellaneous Tasks
 
+- Update cliff.toml
+- Use cargo-nextest
+- Remove semver-checks directory
+- Remove outdated action
+- Update deps
+- Add git-cliff to generate changelog
 - Remove redundant install action
 - Update deps
 - Update deps
