@@ -47,6 +47,7 @@ commit_preprocessors = [
 commit_parsers = [
   { message = "^feat", group = "<!-- 0 -->⛰️ Features" },
   { message = "^fix", group = "<!-- 1 -->🐛 Bug Fixes" },
+  { message = "^docs: update changelog", skip = true },
   { message = "^docs", group = "<!-- 3 -->📚 Documentation" },
   { message = "^style", group = "<!-- 5 -->🎨 Styling" },
   { message = "^refactor", group = "<!-- 2 -->🚜 Refactor" },

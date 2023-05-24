@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file.
 
 ### <!-- 7 -->⚙️ Miscellaneous Tasks
 
+- Update changelog
 - Update cliff.toml
 - Use cargo-nextest
 - Remove semver-checks directory
@@ -43,10 +44,8 @@ All notable changes to this project will be documented in this file.
 
 ### <!-- 3 -->📚 Documentation
 
-- Update changelog
 - Change some comment
 - Update README.md
-- Update changelog
 
 ### <!-- 7 -->⚙️ Miscellaneous Tasks
 
