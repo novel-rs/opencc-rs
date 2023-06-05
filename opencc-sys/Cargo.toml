@@ -19,7 +19,7 @@ build = "build.rs"
 # https://github.com/dtolnay/link-cplusplus
 link-cplusplus = { version = "1.0.8", default-features = false }
 # https://github.com/matklad/once_cell
-once_cell = { version = "1.17.2", default-features = false, features = [
+once_cell = { version = "1.18.0", default-features = false, features = [
   "std",
   "parking_lot",
 ] }
