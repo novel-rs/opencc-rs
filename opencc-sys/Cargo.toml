@@ -28,7 +28,7 @@ once_cell = { version = "1.18.0", default-features = false, features = [
 # https://github.com/rust-lang/cmake-rs
 cmake = { version = "0.1.50", default-features = false }
 # https://github.com/rust-lang/rust-bindgen
-bindgen = { version = "0.65.1", default-features = false, features = [
+bindgen = { version = "0.66.0", default-features = false, features = [
   "runtime",
   "which-rustfmt",
 ] }
