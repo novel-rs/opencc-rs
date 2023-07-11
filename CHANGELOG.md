@@ -2,14 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
-## [unreleased]
+## [opencc-rs-0.3.1] - 2023-07-11
 
 ### <!-- 3 -->📚 Documentation
 
+- Add msrv badge
 - Remove an unnecessary TODO
 
 ### <!-- 7 -->⚙️ Miscellaneous Tasks
 
+- Update deps
+- Update deps
+- Pre-commit autoupdate ([#14](https://github.com/novel-rs/opencc-rs/issues/14))
+- Update deps
+- Pre-commit autoupdate ([#13](https://github.com/novel-rs/opencc-rs/issues/13))
+- Update deps
+- Correct incorrect manifest field
+- Update deps
+- Record minimum supported Rust version in metadata
+- Update deps
+- Update .justfile
+- Update cliff.toml
 - Update changelog
 - Update cliff.toml
 - Use cargo-nextest
