@@ -21,9 +21,12 @@ impl OpenCC {
     where
         T: AsRef<[Config]>,
     {
+        let configs = configs.as_ref();
+        assert!(!configs.is_empty());
+
         let mut openccs = Vec::new();
 
-        for config in configs.as_ref() {
+        for config in configs {
             let config_data = config.get_data();
             let dir = tempdir()?;
             for item in &config_data {
@@ -36,12 +39,12 @@ impl OpenCC {
 
             let opencc = unsafe { opencc_sys::opencc_open(config_file_path.as_ptr()) };
 
-            let v = opencc as uintptr_t;
-            if v == !0 {
+            let ptr = opencc as uintptr_t;
+            if ptr == uintptr_t::MAX {
                 return Err(Error::Create);
             }
 
-            openccs.push(opencc)
+            openccs.push(opencc);
         }
 
         Ok(OpenCC { openccs })
