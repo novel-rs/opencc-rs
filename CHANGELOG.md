@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [opencc-rs-0.3.2] - 2023-07-31
+
+### <!-- 2 -->🚜 Refactor
+
+- Refactor code slightly
+
+### <!-- 7 -->⚙️ Miscellaneous Tasks
+
+- Update deps
+- Update changelog
+
 ## [opencc-rs-0.3.1] - 2023-07-11
 
 ### <!-- 3 -->📚 Documentation
