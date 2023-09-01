@@ -8,27 +8,24 @@ repos:
     hooks:
       - id: check-added-large-files
       - id: check-case-conflict
-      - id: check-executables-have-shebangs
       - id: check-json
       - id: check-merge-conflict
       - id: check-symlinks
       - id: check-toml
       - id: check-vcs-permalinks
-      - id: check-xml
       - id: check-yaml
       - id: destroyed-symlinks
-      - id: detect-private-key
       - id: end-of-file-fixer
       - id: fix-byte-order-marker
+      - id: forbid-new-submodules
       - id: mixed-line-ending
-      - id: pretty-format-json
       - id: trailing-whitespace
   - repo: https://github.com/rhysd/actionlint
     rev: v1.6.25
     hooks:
       - id: actionlint
   - repo: https://github.com/zricethezav/gitleaks
-    rev: v8.17.0
+    rev: v8.18.0
     hooks:
       - id: gitleaks
   - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
