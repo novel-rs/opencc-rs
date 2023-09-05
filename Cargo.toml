@@ -25,7 +25,7 @@ libc = { version = "0.2.147", default-features = false, features = ["std"] }
 # https://github.com/Stebalien/tempfile
 tempfile = { version = "3.8.0", default-features = false }
 # https://github.com/dtolnay/thiserror
-thiserror = { version = "1.0.47", default-features = false }
+thiserror = { version = "1.0.48", default-features = false }
 
 [dev-dependencies]
 # https://github.com/rust-pretty-assertions/rust-pretty-assertions
