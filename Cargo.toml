@@ -21,11 +21,11 @@ members = ["opencc-sys", "."]
 opencc-sys = { version = "0.1.9", path = "opencc-sys" }
 
 # https://github.com/rust-lang/libc
-libc = { version = "0.2.148", default-features = false, features = ["std"] }
+libc = { version = "0.2.149", default-features = false, features = ["std"] }
 # https://github.com/Stebalien/tempfile
 tempfile = { version = "3.8.0", default-features = false }
 # https://github.com/dtolnay/thiserror
-thiserror = { version = "1.0.48", default-features = false }
+thiserror = { version = "1.0.49", default-features = false }
 
 [dev-dependencies]
 # https://github.com/rust-pretty-assertions/rust-pretty-assertions
