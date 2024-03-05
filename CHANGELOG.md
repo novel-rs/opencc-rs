@@ -2,91 +2,77 @@
 
 All notable changes to this project will be documented in this file.
 
+## [unreleased]
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump opencc to 1.1.7
+- Update .pre-commit-config.yaml
+- Add workspace resolver
+
 ## [opencc-rs-0.3.2] - 2023-07-31
 
-### <!-- 2 -->🚜 Refactor
+### 🚜 Refactor
 
 - Refactor code slightly
 
-### <!-- 7 -->⚙️ Miscellaneous Tasks
+### ⚙️ Miscellaneous Tasks
 
-- Update deps
 - Update changelog
 
 ## [opencc-rs-0.3.1] - 2023-07-11
 
-### <!-- 3 -->📚 Documentation
+### 📚 Documentation
 
 - Add msrv badge
 - Remove an unnecessary TODO
 
-### <!-- 7 -->⚙️ Miscellaneous Tasks
+### ⚙️ Miscellaneous Tasks
 
-- Update deps
-- Update deps
-- Pre-commit autoupdate ([#14](https://github.com/novel-rs/opencc-rs/issues/14))
-- Update deps
-- Pre-commit autoupdate ([#13](https://github.com/novel-rs/opencc-rs/issues/13))
-- Update deps
 - Correct incorrect manifest field
-- Update deps
 - Record minimum supported Rust version in metadata
-- Update deps
 - Update .justfile
 - Update cliff.toml
 - Update changelog
 - Update cliff.toml
 - Use cargo-nextest
-- Remove semver-checks directory
-- Remove outdated action
-- Update deps
+- _(ci)_ Remove semver-checks directory
+- _(ci)_ Remove outdated action
 - Add git-cliff to generate changelog
 - Remove redundant install action
-- Update deps
-- Update deps
-- Pre-commit autoupdate ([#10](https://github.com/novel-rs/opencc-rs/issues/10))
-- Update deps
-- Pre-commit autoupdate ([#9](https://github.com/novel-rs/opencc-rs/issues/9))
-- Update deps
-- Pre-commit autoupdate ([#8](https://github.com/novel-rs/opencc-rs/issues/8))
-- Update deps
-- Enable check semver
+- _(ci)_ Enable check semver
 
 ## [opencc-rs-0.3.0] - 2023-03-04
 
-### <!-- 0 -->⛰️ Features
+### ⛰️ Features
 
 - Support for cross compilation
 
-### <!-- 1 -->🐛 Bug Fixes
+### 🐛 Bug Fixes
 
 - Build failed without python env on macos ([#7](https://github.com/novel-rs/opencc-rs/issues/7))
 
-### <!-- 2 -->🚜 Refactor
+### 🚜 Refactor
 
 - Modify the parameter of OpenCC::new
 
-### <!-- 3 -->📚 Documentation
+### 📚 Documentation
 
 - Change some comment
 - Update README.md
 
-### <!-- 7 -->⚙️ Miscellaneous Tasks
+### ⚙️ Miscellaneous Tasks
 
-- Disable check semver
-- Try to fix check semver failed
-- Change version-tag-prefix
+- _(ci)_ Disable check semver
+- _(ci)_ Try to fix check semver failed
+- _(ci)_ Change version-tag-prefix
 - Change dependabot schedule to weekly
-- Bump tempfile
-- Pre-commit autoupdate ([#5](https://github.com/novel-rs/opencc-rs/issues/5))
 - Bump version
-- Update deps
 - Bump version
 - Add license and README.md for opencc-sys
 - Remove opencc-sys license and README.md
 - Disable default-features for all crates
 - Add cargo-semver-checks install action
-- Bump opencc-sys
 - Enable check semver
 - Disable check semver
 - Fix check semver
@@ -95,63 +81,59 @@ All notable changes to this project will be documented in this file.
 - Remove outdated action schedule
 - Add cargo-semver-checks-action
 - Change publish
-- Bump libc
 
 ## [opencc-rs-0.2.0] - 2023-01-23
 
-### <!-- 0 -->⛰️ Features
+### ⛰️ Features
 
 - Allow multiple OpenCC configurations
 
-### <!-- 1 -->🐛 Bug Fixes
+### 🐛 Bug Fixes
 
 - Wrong opencc-sys version
 
-### <!-- 2 -->🚜 Refactor
+### 🚜 Refactor
 
 - Use link-cplusplus
 - Use once_cell instead of lazy_static
 
-### <!-- 6 -->🧪 Testing
+### 🧪 Testing
 
 - Fix wrong line breaks on Windows
 - Add t2tw test
 
-### <!-- 7 -->⚙️ Miscellaneous Tasks
+### ⚙️ Miscellaneous Tasks
 
 - Use stable rustfmt
-- Disable unneeded features
 - Remove rustfmt.toml
 - Update pre-commit config
-- Pre-commit autoupdate ([#4](https://github.com/novel-rs/opencc-rs/issues/4))
-- Bump OpenCC from 1.1.5 to 1.1.6
 
 ### Build
 
-- Bump taiki-e/install-action from 1 to 2 ([#3](https://github.com/novel-rs/opencc-rs/issues/3))
+- _(deps)_ Bump taiki-e/install-action from 1 to 2 ([#3](https://github.com/novel-rs/opencc-rs/issues/3))
 
 ## [opencc-rs-0.1.4] - 2022-12-06
 
-### <!-- 0 -->⛰️ Features
+### ⛰️ Features
 
 - Initial
 
-### <!-- 3 -->📚 Documentation
+### 📚 Documentation
 
 - Add som doc
 - Add some comment
 - Add badge
 
-### <!-- 6 -->🧪 Testing
+### 🧪 Testing
 
 - Fix wrong package name
 - Add more tests
 
-### <!-- 7 -->⚙️ Miscellaneous Tasks
+### ⚙️ Miscellaneous Tasks
 
 - Bump version
-- Add tags-ignore
-- Add including branches and ignore coverage failed
+- _(ci)_ Add tags-ignore
+- _(ci)_ Add including branches and ignore coverage failed
 - Remove dependabot gitsubmodule
 - Change publish.yml
 - Update pre-commot config
