@@ -30,11 +30,11 @@ impl OpenCC {
             let config_data = config.get_data();
             let dir = tempdir()?;
             for item in &config_data {
-                let file_path = dir.path().join(item.filename);
+                let file_path = dir.path().join(item.file_name);
                 write(file_path, item.content)?;
             }
 
-            let config_file_path = dir.path().join(config_data[0].filename);
+            let config_file_path = dir.path().join(config_data[0].file_name);
             let config_file_path = CString::new(config_file_path.to_str().unwrap()).unwrap();
 
             let opencc = unsafe { opencc_sys::opencc_open(config_file_path.as_ptr()) };

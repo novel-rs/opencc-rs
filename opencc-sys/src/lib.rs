@@ -44,24 +44,24 @@ macro_rules! OCD2_PREFIX {
 }
 
 pub struct Data {
-    pub filename: &'static str,
+    pub file_name: &'static str,
     pub content: &'static [u8],
 }
 
 macro_rules! new_json_data {
-    ($filename:expr) => {
+    ($file_name:expr) => {
         Lazy::new(|| Data {
-            filename: $filename,
-            content: include_bytes!(concat!(JSON_PREFIX!(), $filename)),
+            file_name: $file_name,
+            content: include_bytes!(concat!(JSON_PREFIX!(), $file_name)),
         })
     };
 }
 
 macro_rules! new_ocd2_data {
-    ($filename:expr) => {
+    ($file_name:expr) => {
         Lazy::new(|| Data {
-            filename: $filename,
-            content: include_bytes!(concat!(OCD2_PREFIX!(), $filename)),
+            file_name: $file_name,
+            content: include_bytes!(concat!(OCD2_PREFIX!(), $file_name)),
         })
     };
 }
