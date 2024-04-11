@@ -4,8 +4,19 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🐛 Bug Fixes
+
+- _(ci)_ Use macos-14 instead of macos-latest
+
+### 🚜 Refactor
+
+- Change variable names
+
 ### ⚙️ Miscellaneous Tasks
 
+- Upgrade various project files
+- Update deny.toml
+- Upgrade various project files
 - Bump opencc to 1.1.7
 - Update .pre-commit-config.yaml
 - Add workspace resolver
