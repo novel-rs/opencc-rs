@@ -18,7 +18,7 @@ resolver = "2"
 members = ["opencc-sys", "."]
 
 [dependencies]
-opencc-sys = { version = "0.1.10", path = "opencc-sys" }
+opencc-sys = { version = "0.2.0", path = "opencc-sys" }
 
 # https://github.com/rust-lang/libc
 libc = { version = "0.2.153", default-features = false, features = ["std"] }
