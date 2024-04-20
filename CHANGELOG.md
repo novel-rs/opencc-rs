@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [unreleased]
+
+### ⚙️ Miscellaneous Tasks
+
+- _(ci)_ Remove unnecessary operations
+
 ## [opencc-rs-0.3.3] - 2024-04-11
 
 ### 🐛 Bug Fixes
