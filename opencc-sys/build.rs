@@ -1,6 +1,6 @@
+use std::{env, path::PathBuf};
+
 use bindgen::Builder;
-use std::env;
-use std::path::PathBuf;
 
 fn main() {
     let mut cfg = &mut cmake::Config::new("OpenCC");
