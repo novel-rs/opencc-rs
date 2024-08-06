@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.2](https://github.com/novel-rs/opencc-rs/compare/opencc-rs-v0.4.1...opencc-rs-v0.4.2) - 2024-08-06
+
+### <!-- 7 -->⚙️ Miscellaneous Tasks
+- disable git release
+
 ## [0.4.1](https://github.com/novel-rs/opencc-rs/compare/opencc-rs-v0.4.0...opencc-rs-v0.4.1) - 2024-08-06
 
 ### <!-- 7 -->⚙️ Miscellaneous Tasks
