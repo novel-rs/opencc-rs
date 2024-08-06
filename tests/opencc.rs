@@ -1,7 +1,8 @@
 use std::fs;
 
-use opencc_rs::{Config, Error, OpenCC};
+use opencc_rs::{Config, OpenCC};
 use pretty_assertions::assert_eq;
+use testresult::TestResult;
 
 #[cfg(target_os = "windows")]
 macro_rules! PATH_SEPARATOR {
@@ -35,7 +36,7 @@ macro_rules! TESTCASES_PREFIX {
 }
 
 #[test]
-fn hk2s() -> Result<(), Error> {
+fn hk2s() -> TestResult<()> {
     let opencc = OpenCC::new([Config::HK2S])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "hk2s.in"))?;
@@ -47,7 +48,7 @@ fn hk2s() -> Result<(), Error> {
 }
 
 #[test]
-fn hk2t() -> Result<(), Error> {
+fn hk2t() -> TestResult<()> {
     let opencc = OpenCC::new([Config::HK2T])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "hk2t.in"))?;
@@ -59,7 +60,7 @@ fn hk2t() -> Result<(), Error> {
 }
 
 #[test]
-fn jp2t() -> Result<(), Error> {
+fn jp2t() -> TestResult<()> {
     let opencc = OpenCC::new([Config::JP2T])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "jp2t.in"))?;
@@ -71,7 +72,7 @@ fn jp2t() -> Result<(), Error> {
 }
 
 #[test]
-fn s2hk() -> Result<(), Error> {
+fn s2hk() -> TestResult<()> {
     let opencc = OpenCC::new([Config::S2HK])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2hk.in"))?;
@@ -83,7 +84,7 @@ fn s2hk() -> Result<(), Error> {
 }
 
 #[test]
-fn s2t() -> Result<(), Error> {
+fn s2t() -> TestResult<()> {
     let opencc = OpenCC::new([Config::S2T])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2t.in"))?;
@@ -95,7 +96,7 @@ fn s2t() -> Result<(), Error> {
 }
 
 #[test]
-fn s2tw() -> Result<(), Error> {
+fn s2tw() -> TestResult<()> {
     let opencc = OpenCC::new([Config::S2TW])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2tw.in"))?;
@@ -107,7 +108,7 @@ fn s2tw() -> Result<(), Error> {
 }
 
 #[test]
-fn s2twp() -> Result<(), Error> {
+fn s2twp() -> TestResult<()> {
     let opencc = OpenCC::new([Config::S2TWP])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2twp.in"))?;
@@ -119,7 +120,7 @@ fn s2twp() -> Result<(), Error> {
 }
 
 #[test]
-fn t2hk() -> Result<(), Error> {
+fn t2hk() -> TestResult<()> {
     let opencc = OpenCC::new([Config::T2HK])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "t2hk.in"))?;
@@ -131,7 +132,7 @@ fn t2hk() -> Result<(), Error> {
 }
 
 #[test]
-fn t2jp() -> Result<(), Error> {
+fn t2jp() -> TestResult<()> {
     let opencc = OpenCC::new([Config::T2JP])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "t2jp.in"))?;
@@ -143,7 +144,7 @@ fn t2jp() -> Result<(), Error> {
 }
 
 #[test]
-fn t2s() -> Result<(), Error> {
+fn t2s() -> TestResult<()> {
     let opencc = OpenCC::new([Config::T2S])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "t2s.in"))?;
@@ -155,7 +156,7 @@ fn t2s() -> Result<(), Error> {
 }
 
 #[test]
-fn tw2s() -> Result<(), Error> {
+fn tw2s() -> TestResult<()> {
     let opencc = OpenCC::new([Config::TW2S])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2s.in"))?;
@@ -167,7 +168,7 @@ fn tw2s() -> Result<(), Error> {
 }
 
 #[test]
-fn tw2sp() -> Result<(), Error> {
+fn tw2sp() -> TestResult<()> {
     let opencc = OpenCC::new([Config::TW2SP])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2sp.in"))?;
@@ -179,7 +180,7 @@ fn tw2sp() -> Result<(), Error> {
 }
 
 #[test]
-fn tw2t() -> Result<(), Error> {
+fn tw2t() -> TestResult<()> {
     let opencc = OpenCC::new([Config::TW2T])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2t.in"))?;
@@ -191,7 +192,7 @@ fn tw2t() -> Result<(), Error> {
 }
 
 #[test]
-fn t2tw() -> Result<(), Error> {
+fn t2tw() -> TestResult<()> {
     let opencc = OpenCC::new([Config::T2TW])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2t.ans"))?;
@@ -203,7 +204,7 @@ fn t2tw() -> Result<(), Error> {
 }
 
 #[test]
-fn jp2t2s() -> Result<(), Error> {
+fn jp2t2s() -> TestResult<()> {
     let opencc = OpenCC::new([Config::JP2T, Config::T2S])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "jp2t.in"))?;
