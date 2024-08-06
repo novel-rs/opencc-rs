@@ -2,6 +2,7 @@ use std::{env, path::PathBuf};
 
 use bindgen::Builder;
 
+// fot test
 fn main() {
     let mut cfg = &mut cmake::Config::new("OpenCC");
 
