@@ -1,4 +1,4 @@
-name: Coverage
+name: Test
 
 on:
   push:
@@ -16,6 +16,4 @@ on:
 
 jobs:
   test:
-    uses: TerakomariGandesblood/github-workflows/.github/workflows/rust-coverage.yml@main
-    secrets:
-      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+    uses: TerakomariGandesblood/github-workflows/.github/workflows/rust-test.yml@main

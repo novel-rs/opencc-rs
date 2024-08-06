@@ -1,0 +1,21 @@
+# https://release-plz.ieni.dev/docs/config
+
+[changelog]
+commit_preprocessors = [
+  { pattern = '\((\w+\s)?#([0-9]+)\)', replace = "([#${2}](https://github.com/novel-rs/opencc-rs/issues/${2}))" },
+]
+
+commit_parsers = [
+  { message = "^feat", group = "<!-- 0 -->🚀 Features" },
+  { message = "^fix", group = "<!-- 1 -->🐛 Bug Fixes" },
+  { message = "^docs", group = "<!-- 3 -->📚 Documentation" },
+  { message = "^style", group = "<!-- 5 -->🎨 Styling" },
+  { message = "^refactor", group = "<!-- 2 -->🚜 Refactor" },
+  { message = "^perf", group = "<!-- 4 -->⚡ Performance" },
+  { message = "^test", group = "<!-- 6 -->🧪 Testing" },
+  { message = "^chore: release", skip = true },
+  { message = "^chore\\(deps.*\\)", skip = true },
+  { message = "^chore: pre-commit autoupdate", skip = true },
+  { message = "^chore", group = "<!-- 7 -->⚙️ Miscellaneous Tasks" },
+  { message = "^revert", group = "<!-- 8 -->◀️ Revert" },
+]

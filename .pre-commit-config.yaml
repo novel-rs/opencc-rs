@@ -1,4 +1,5 @@
-# https://pre-commit.com/#2-add-a-pre-commit-configuration
+# https://pre-commit.ci/#configuration
+
 default_stages: [commit]
 default_install_hook_types: [pre-commit, commit-msg]
 
@@ -35,8 +36,6 @@ repos:
         stages: [commit-msg]
         additional_dependencies: ["@commitlint/config-angular"]
 
-# https://pre-commit.ci/#configuration
 ci:
   autofix_prs: false
   autoupdate_commit_msg: "chore: pre-commit autoupdate"
-  skip: [actionlint]
