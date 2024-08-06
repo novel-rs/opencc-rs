@@ -2,6 +2,7 @@
 
 [workspace]
 allow_dirty = true
+git_release_enable = false
 
 [changelog]
 commit_preprocessors = [
