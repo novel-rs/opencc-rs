@@ -36,7 +36,7 @@ macro_rules! TESTCASES_PREFIX {
 }
 
 #[test]
-fn hk2s() -> TestResult<()> {
+fn hk2s() -> TestResult {
     let opencc = OpenCC::new([Config::HK2S])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "hk2s.in"))?;
@@ -48,7 +48,7 @@ fn hk2s() -> TestResult<()> {
 }
 
 #[test]
-fn hk2t() -> TestResult<()> {
+fn hk2t() -> TestResult {
     let opencc = OpenCC::new([Config::HK2T])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "hk2t.in"))?;
@@ -60,7 +60,7 @@ fn hk2t() -> TestResult<()> {
 }
 
 #[test]
-fn jp2t() -> TestResult<()> {
+fn jp2t() -> TestResult {
     let opencc = OpenCC::new([Config::JP2T])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "jp2t.in"))?;
@@ -72,7 +72,7 @@ fn jp2t() -> TestResult<()> {
 }
 
 #[test]
-fn s2hk() -> TestResult<()> {
+fn s2hk() -> TestResult {
     let opencc = OpenCC::new([Config::S2HK])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2hk.in"))?;
@@ -84,7 +84,7 @@ fn s2hk() -> TestResult<()> {
 }
 
 #[test]
-fn s2t() -> TestResult<()> {
+fn s2t() -> TestResult {
     let opencc = OpenCC::new([Config::S2T])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2t.in"))?;
@@ -96,7 +96,7 @@ fn s2t() -> TestResult<()> {
 }
 
 #[test]
-fn s2tw() -> TestResult<()> {
+fn s2tw() -> TestResult {
     let opencc = OpenCC::new([Config::S2TW])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2tw.in"))?;
@@ -108,7 +108,7 @@ fn s2tw() -> TestResult<()> {
 }
 
 #[test]
-fn s2twp() -> TestResult<()> {
+fn s2twp() -> TestResult {
     let opencc = OpenCC::new([Config::S2TWP])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2twp.in"))?;
@@ -120,7 +120,7 @@ fn s2twp() -> TestResult<()> {
 }
 
 #[test]
-fn t2hk() -> TestResult<()> {
+fn t2hk() -> TestResult {
     let opencc = OpenCC::new([Config::T2HK])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "t2hk.in"))?;
@@ -132,7 +132,7 @@ fn t2hk() -> TestResult<()> {
 }
 
 #[test]
-fn t2jp() -> TestResult<()> {
+fn t2jp() -> TestResult {
     let opencc = OpenCC::new([Config::T2JP])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "t2jp.in"))?;
@@ -144,7 +144,7 @@ fn t2jp() -> TestResult<()> {
 }
 
 #[test]
-fn t2s() -> TestResult<()> {
+fn t2s() -> TestResult {
     let opencc = OpenCC::new([Config::T2S])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "t2s.in"))?;
@@ -156,7 +156,7 @@ fn t2s() -> TestResult<()> {
 }
 
 #[test]
-fn tw2s() -> TestResult<()> {
+fn tw2s() -> TestResult {
     let opencc = OpenCC::new([Config::TW2S])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2s.in"))?;
@@ -168,7 +168,7 @@ fn tw2s() -> TestResult<()> {
 }
 
 #[test]
-fn tw2sp() -> TestResult<()> {
+fn tw2sp() -> TestResult {
     let opencc = OpenCC::new([Config::TW2SP])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2sp.in"))?;
@@ -180,7 +180,7 @@ fn tw2sp() -> TestResult<()> {
 }
 
 #[test]
-fn tw2t() -> TestResult<()> {
+fn tw2t() -> TestResult {
     let opencc = OpenCC::new([Config::TW2T])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2t.in"))?;
@@ -192,7 +192,7 @@ fn tw2t() -> TestResult<()> {
 }
 
 #[test]
-fn t2tw() -> TestResult<()> {
+fn t2tw() -> TestResult {
     let opencc = OpenCC::new([Config::T2TW])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2t.ans"))?;
@@ -204,7 +204,7 @@ fn t2tw() -> TestResult<()> {
 }
 
 #[test]
-fn jp2t2s() -> TestResult<()> {
+fn jp2t2s() -> TestResult {
     let opencc = OpenCC::new([Config::JP2T, Config::T2S])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "jp2t.in"))?;
