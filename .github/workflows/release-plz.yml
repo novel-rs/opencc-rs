@@ -11,9 +11,6 @@ permissions:
   contents: write
   pull-requests: write
 
-env:
-  PYTHONDONTWRITEBYTECODE: true
-
 jobs:
   release-plz:
     uses: TerakomariGandesblood/github-workflows/.github/workflows/rust-release-plz.yml@main
