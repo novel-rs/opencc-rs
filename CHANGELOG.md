@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.4](https://github.com/novel-rs/opencc-rs/compare/opencc-rs-v0.4.3...opencc-rs-v0.4.4) - 2024-08-06
+
+### <!-- 7 -->⚙️ Miscellaneous Tasks
+- add issue template
+
 ## [0.4.3](https://github.com/novel-rs/opencc-rs/compare/opencc-rs-v0.4.2...opencc-rs-v0.4.3) - 2024-08-06
 
 ### <!-- 6 -->🧪 Testing
