@@ -28,16 +28,17 @@ A specification for adding human and machine readable meaning to commit messages
   │       │
   │       └─⫸ Commit Scope
   │
-  └─⫸ Commit Type: feat|fix|build|ci|docs|perf|refactor|test|chore
+  └─⫸ Commit Type: feat|fix|docs|style|refactor|perf|test|chore|revert
 ```
 
 #### Type
 
-| feat     | Features                 | A new feature                                             |
+|          |                          |                                                           |
 | -------- | ------------------------ | --------------------------------------------------------- |
+| feat     | Features                 | A new feature                                             |
 | fix      | Bug Fixes                | A bug fix                                                 |
 | docs     | Documentation            | Documentation only changes                                |
-| style    | Styles                   | Changes that do not affect the meaning of the code\       |
+| style    | Styles                   | Changes that do not affect the meaning of the code        |
 | refactor | Code Refactoring         | A code change that neither fixes a bug nor adds a feature |
 | perf     | Performance Improvements | A code change that improves performance                   |
 | test     | Tests                    | Adding missing tests or correcting existing tests         |
