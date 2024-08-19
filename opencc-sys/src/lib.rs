@@ -20,7 +20,11 @@ macro_rules! PATH_SEPARATOR {
     };
 }
 
-include!(concat!(env!("OUT_DIR"), PATH_SEPARATOR!(), "bindings.rs"));
+#[allow(clippy::all)]
+mod bindings {
+    include!(concat!(env!("OUT_DIR"), PATH_SEPARATOR!(), "bindings.rs"));
+}
+pub use bindings::*;
 
 macro_rules! JSON_PREFIX {
     () => {
