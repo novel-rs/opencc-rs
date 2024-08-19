@@ -1,6 +1,6 @@
 [package]
 name = "opencc-sys"
-version = "0.3.1+1.1.9"
+version = "0.3.2+1.1.9"
 edition = "2021"
 rust-version = "1.80"
 license = "MIT OR Apache-2.0"
