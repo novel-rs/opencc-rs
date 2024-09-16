@@ -29,7 +29,7 @@ thiserror = { version = "1.0.63", default-features = false }
 
 [dev-dependencies]
 # https://github.com/rust-pretty-assertions/rust-pretty-assertions
-pretty_assertions = { version = "1.4.0", default-features = false, features = [
+pretty_assertions = { version = "1.4.1", default-features = false, features = [
   "std",
 ] }
 # https://github.com/wiktor-k/testresult
