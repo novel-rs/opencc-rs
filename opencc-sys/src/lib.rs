@@ -6,44 +6,21 @@ extern crate link_cplusplus;
 
 use std::sync::LazyLock;
 
-#[cfg(target_os = "windows")]
-macro_rules! PATH_SEPARATOR {
-    () => {
-        r"\"
-    };
-}
-
-#[cfg(not(target_os = "windows"))]
-macro_rules! PATH_SEPARATOR {
-    () => {
-        r"/"
-    };
-}
-
 #[allow(clippy::all)]
 mod bindings {
-    include!(concat!(env!("OUT_DIR"), PATH_SEPARATOR!(), "bindings.rs"));
+    include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 }
 pub use bindings::*;
 
 macro_rules! JSON_PREFIX {
     () => {
-        concat!(
-            env!("CARGO_MANIFEST_DIR"),
-            PATH_SEPARATOR!(),
-            "OpenCC",
-            PATH_SEPARATOR!(),
-            "data",
-            PATH_SEPARATOR!(),
-            "config",
-            PATH_SEPARATOR!()
-        )
+        concat!(env!("CARGO_MANIFEST_DIR"), "/OpenCC/data/config/",)
     };
 }
 
 macro_rules! OCD2_PREFIX {
     () => {
-        concat!("assets", PATH_SEPARATOR!())
+        "assets/"
     };
 }
 

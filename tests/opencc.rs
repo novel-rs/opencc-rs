@@ -4,33 +4,11 @@ use opencc_rs::{Config, OpenCC};
 use pretty_assertions::assert_eq;
 use testresult::TestResult;
 
-#[cfg(target_os = "windows")]
-macro_rules! PATH_SEPARATOR {
-    () => {
-        r"\"
-    };
-}
-
-#[cfg(not(target_os = "windows"))]
-macro_rules! PATH_SEPARATOR {
-    () => {
-        r"/"
-    };
-}
-
 macro_rules! TESTCASES_PREFIX {
     () => {
         concat!(
             env!("CARGO_MANIFEST_DIR"),
-            PATH_SEPARATOR!(),
-            "opencc-sys",
-            PATH_SEPARATOR!(),
-            "OpenCC",
-            PATH_SEPARATOR!(),
-            "test",
-            PATH_SEPARATOR!(),
-            "testcases",
-            PATH_SEPARATOR!()
+            "/opencc-sys/OpenCC/test/testcases/",
         )
     };
 }
