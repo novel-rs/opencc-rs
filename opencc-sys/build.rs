@@ -41,11 +41,11 @@ fn main() {
     opencc = opencc.join("build").join("src");
     if cfg!(windows) {
         if !marisa.join("libmarisa.a").exists() {
-            marisa = marisa.join("Release");
+            marisa = marisa.join(build_type);
         }
 
         if !opencc.join("libopencc.a").exists() {
-            opencc = opencc.join("Release");
+            opencc = opencc.join(build_type);
         }
     }
 
