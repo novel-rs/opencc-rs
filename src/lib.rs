@@ -2,12 +2,10 @@
 
 use std::{
     ffi::{c_void, CStr, CString},
-    fs::write,
-    io,
+    fs, io,
 };
 
 use libc::uintptr_t;
-use tempfile::tempdir;
 use thiserror::Error;
 
 /// OpenCC bindings for Rust
@@ -28,10 +26,10 @@ impl OpenCC {
 
         for config in configs {
             let config_data = config.get_data();
-            let dir = tempdir()?;
+            let dir = tempfile::tempdir()?;
             for item in &config_data {
                 let file_path = dir.path().join(item.file_name);
-                write(file_path, item.content)?;
+                fs::write(file_path, item.content)?;
             }
 
             let config_file_path = dir.path().join(config_data[0].file_name);
