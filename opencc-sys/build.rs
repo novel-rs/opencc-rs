@@ -39,9 +39,14 @@ fn main() {
 
     marisa = marisa.join("build").join("deps").join("marisa-0.2.6");
     opencc = opencc.join("build").join("src");
-    if cfg!(target_os = "windows") {
-        marisa = marisa.join("Release");
-        opencc = opencc.join("Release");
+    if cfg!(windows) {
+        if !marisa.join("libmarisa.a").exists() {
+            marisa = marisa.join("Release");
+        }
+
+        if !opencc.join("libopencc.a").exists() {
+            opencc = opencc.join("Release");
+        }
     }
 
     println!("cargo:rustc-link-search=native={}", marisa.display());
