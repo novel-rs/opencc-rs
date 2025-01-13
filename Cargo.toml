@@ -27,7 +27,7 @@ tempfile = { version = "3.15.0", default-features = false, features = [
   "getrandom",
 ] }
 # https://github.com/dtolnay/thiserror
-thiserror = { version = "2.0.10", default-features = false }
+thiserror = { version = "2.0.11", default-features = false, features = ["std"] }
 
 [dev-dependencies]
 # https://github.com/rust-pretty-assertions/rust-pretty-assertions
