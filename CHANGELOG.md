@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.8](https://github.com/novel-rs/opencc-rs/compare/opencc-rs-v0.4.7...opencc-rs-v0.4.8) - 2025-01-13
+
+### <!-- 2 -->🚜 Refactor
+
+- use more use
+- remove PATH_SEPARATOR
+
 ## [0.4.5](https://github.com/novel-rs/opencc-rs/compare/opencc-rs-v0.4.4...opencc-rs-v0.4.5) - 2024-08-19
 
 ### <!-- 2 -->🚜 Refactor
