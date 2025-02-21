@@ -1,7 +1,7 @@
 //! OpenCC bindings for Rust
 
 use std::{
-    ffi::{c_void, CStr, CString},
+    ffi::{CStr, CString, c_void},
     fs, io,
 };
 
