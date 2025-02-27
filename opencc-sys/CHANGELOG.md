@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.6+1.1.9](https://github.com/novel-rs/opencc-rs/compare/opencc-sys-v0.3.5+1.1.9...opencc-sys-v0.3.6+1.1.9) - 2025-02-27
+
+### <!-- 7 -->⚙️ Miscellaneous Tasks
+
+- edition 2024
+
 ## [0.3.5+1.1.9](https://github.com/novel-rs/opencc-rs/compare/opencc-sys-v0.3.4+1.1.9...opencc-sys-v0.3.5+1.1.9) - 2025-01-13
 
 ### <!-- 1 -->🐛 Bug Fixes
