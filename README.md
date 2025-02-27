@@ -3,7 +3,6 @@
 [![Test](https://github.com/novel-rs/opencc-rs/actions/workflows/test.yml/badge.svg)](https://github.com/novel-rs/opencc-rs/actions/workflows/test.yml)
 [![codecov](https://codecov.io/gh/novel-rs/opencc-rs/graph/badge.svg?token=96TJ1OIF3P)](https://codecov.io/gh/novel-rs/opencc-rs)
 [![docs.rs](https://img.shields.io/docsrs/opencc-rs)](https://docs.rs/opencc-rs)
-[![MSRV](https://img.shields.io/badge/rustc-1.80+-blue.svg)](https://github.com/rust-lang/rust)
 [![Crates.io](https://img.shields.io/crates/l/opencc-rs)](https://github.com/novel-rs/opencc-rs)
 [![Crates.io](https://img.shields.io/crates/v/opencc-rs)](https://crates.io/crates/opencc-rs)
 
