@@ -1,9 +1,7 @@
 //! OpenCC bindings for Rust
 
-use std::{
-    ffi::{CStr, CString, c_void},
-    fs, io,
-};
+use std::ffi::{CStr, CString, c_void};
+use std::{fs, io};
 
 use libc::uintptr_t;
 use thiserror::Error;
