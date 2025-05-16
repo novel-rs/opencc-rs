@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.7+1.1.9](https://github.com/novel-rs/opencc-rs/compare/opencc-sys-v0.3.6+1.1.9...opencc-sys-v0.3.7+1.1.9) - 2025-05-16
+
+### <!-- 3 -->📚 Documentation
+
+- update README.md
+
+### <!-- 5 -->🎨 Styling
+
+- use Module imports_granularit
+
 ## [0.3.6+1.1.9](https://github.com/novel-rs/opencc-rs/compare/opencc-sys-v0.3.5+1.1.9...opencc-sys-v0.3.6+1.1.9) - 2025-02-27
 
 ### <!-- 7 -->⚙️ Miscellaneous Tasks
