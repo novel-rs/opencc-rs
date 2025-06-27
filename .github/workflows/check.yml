@@ -23,5 +23,5 @@ jobs:
   check:
     uses: TerakomariGandesblood/github-workflows/.github/workflows/rust-check.yml@main
     with:
-      msrv: "1.85.0"
+      msrv: "1.88.0"
       run_doc_check: true
