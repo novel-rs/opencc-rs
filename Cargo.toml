@@ -1,6 +1,6 @@
 [package]
 name = "opencc-rs"
-version = "0.4.10"
+version = "0.4.11"
 edition = "2024"
 rust-version = "1.88"
 license = "MIT OR Apache-2.0"
@@ -18,7 +18,7 @@ resolver = "3"
 members = ["opencc-sys", "."]
 
 [dependencies]
-opencc-sys = { version = "0.3.7", path = "opencc-sys" }
+opencc-sys = { version = "0.3.8", path = "opencc-sys" }
 
 # https://github.com/rust-lang/libc
 libc = { version = "0.2.175", default-features = false, features = ["std"] }
