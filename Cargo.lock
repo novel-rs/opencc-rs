@@ -202,7 +202,7 @@ checksum = "42f5e15c9953c5e4ccceeb2e7382a716482c34515315f7b03532b8b4e8393d2d"
 
 [[package]]
 name = "opencc-rs"
-version = "0.4.10"
+version = "0.4.11"
 dependencies = [
  "libc",
  "opencc-sys",
@@ -214,7 +214,7 @@ dependencies = [
 
 [[package]]
 name = "opencc-sys"
-version = "0.3.7+1.1.9"
+version = "0.3.8+1.1.9"
 dependencies = [
  "bindgen",
  "cmake",
