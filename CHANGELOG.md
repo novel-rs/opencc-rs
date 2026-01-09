@@ -14,6 +14,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.12](https://github.com/novel-rs/opencc-rs/compare/opencc-rs-v0.4.11...opencc-rs-v0.4.12) - 2026-01-09
+
+### <!-- 5 -->🎨 Styling
+
+- add edition to rustfmt.toml
+
 ## [0.4.10](https://github.com/novel-rs/opencc-rs/compare/opencc-rs-v0.4.9...opencc-rs-v0.4.10) - 2025-06-10
 
 ### <!-- 3 -->📚 Documentation
