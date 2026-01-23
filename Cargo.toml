@@ -1,6 +1,6 @@
 [package]
 name = "opencc-rs"
-version = "0.4.11"
+version = "0.5.0"
 edition = "2024"
 rust-version = "1.88"
 license = "MIT OR Apache-2.0"
@@ -18,7 +18,7 @@ resolver = "3"
 members = ["opencc-sys", "."]
 
 [dependencies]
-opencc-sys = { version = "0.3.8", path = "opencc-sys" }
+opencc-sys = { version = "0.4.0", path = "opencc-sys" }
 
 # https://github.com/rust-lang/libc
 libc = { version = "0.2.180", default-features = false, features = ["std"] }
@@ -27,7 +27,7 @@ tempfile = { version = "3.24.0", default-features = false, features = [
   "getrandom",
 ] }
 # https://github.com/dtolnay/thiserror
-thiserror = { version = "2.0.17", default-features = false, features = ["std"] }
+thiserror = { version = "2.0.18", default-features = false, features = ["std"] }
 
 [dev-dependencies]
 # https://github.com/rust-pretty-assertions/rust-pretty-assertions
