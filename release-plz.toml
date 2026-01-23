@@ -1,5 +1,8 @@
 # https://release-plz.ieni.dev/docs/config
 
+[workspace]
+allow_dirty = true
+
 [changelog]
 commit_preprocessors = [
   { pattern = '\((\w+\s)?#([0-9]+)\)', replace = "([#${2}](https://github.com/novel-rs/opencc-rs/issues/${2}))" },
