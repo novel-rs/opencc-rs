@@ -17,7 +17,7 @@ fn hk2s() -> TestResult {
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "hk2s.in"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "hk2s.ans"))?;
 
-    assert_eq!(opencc.convert(input)?, output);
+    assert_eq!(opencc.convert(input)?.trim(), output.trim());
 
     Ok(())
 }
@@ -29,7 +29,7 @@ fn hk2t() -> TestResult {
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "hk2t.in"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "hk2t.ans"))?;
 
-    assert_eq!(opencc.convert(input)?, output);
+    assert_eq!(opencc.convert(input)?.trim(), output.trim());
 
     Ok(())
 }
@@ -41,7 +41,7 @@ fn jp2t() -> TestResult {
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "jp2t.in"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "jp2t.ans"))?;
 
-    assert_eq!(opencc.convert(input)?, output);
+    assert_eq!(opencc.convert(input)?.trim(), output.trim());
 
     Ok(())
 }
@@ -53,7 +53,7 @@ fn s2hk() -> TestResult {
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2hk.in"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2hk.ans"))?;
 
-    assert_eq!(opencc.convert(input)?, output);
+    assert_eq!(opencc.convert(input)?.trim(), output.trim());
 
     Ok(())
 }
@@ -65,7 +65,7 @@ fn s2t() -> TestResult {
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2t.in"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2t.ans"))?;
 
-    assert_eq!(opencc.convert(input)?, output);
+    assert_eq!(opencc.convert(input)?.trim(), output.trim());
 
     Ok(())
 }
@@ -77,7 +77,7 @@ fn s2tw() -> TestResult {
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2tw.in"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2tw.ans"))?;
 
-    assert_eq!(opencc.convert(input)?, output);
+    assert_eq!(opencc.convert(input)?.trim(), output.trim());
 
     Ok(())
 }
@@ -89,7 +89,7 @@ fn s2twp() -> TestResult {
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2twp.in"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2twp.ans"))?;
 
-    assert_eq!(opencc.convert(input)?, output);
+    assert_eq!(opencc.convert(input)?.trim(), output.trim());
 
     Ok(())
 }
@@ -101,7 +101,7 @@ fn t2hk() -> TestResult {
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "t2hk.in"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "t2hk.ans"))?;
 
-    assert_eq!(opencc.convert(input)?, output);
+    assert_eq!(opencc.convert(input)?.trim(), output.trim());
 
     Ok(())
 }
@@ -113,7 +113,7 @@ fn t2jp() -> TestResult {
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "t2jp.in"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "t2jp.ans"))?;
 
-    assert_eq!(opencc.convert(input)?, output);
+    assert_eq!(opencc.convert(input)?.trim(), output.trim());
 
     Ok(())
 }
@@ -125,7 +125,7 @@ fn t2s() -> TestResult {
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "t2s.in"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "t2s.ans"))?;
 
-    assert_eq!(opencc.convert(input)?, output);
+    assert_eq!(opencc.convert(input)?.trim(), output.trim());
 
     Ok(())
 }
@@ -137,7 +137,7 @@ fn tw2s() -> TestResult {
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2s.in"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2s.ans"))?;
 
-    assert_eq!(opencc.convert(input)?, output);
+    assert_eq!(opencc.convert(input)?.trim(), output.trim());
 
     Ok(())
 }
@@ -149,7 +149,7 @@ fn tw2sp() -> TestResult {
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2sp.in"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2sp.ans"))?;
 
-    assert_eq!(opencc.convert(input)?, output);
+    assert_eq!(opencc.convert(input)?.trim(), output.trim());
 
     Ok(())
 }
@@ -161,7 +161,7 @@ fn tw2t() -> TestResult {
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2t.in"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2t.ans"))?;
 
-    assert_eq!(opencc.convert(input)?, output);
+    assert_eq!(opencc.convert(input)?.trim(), output.trim());
 
     Ok(())
 }
@@ -173,7 +173,7 @@ fn t2tw() -> TestResult {
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2t.ans"))?;
     let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2t.in"))?;
 
-    assert_eq!(opencc.convert(input)?, output);
+    assert_eq!(opencc.convert(input)?.trim(), output.trim());
 
     Ok(())
 }
@@ -183,9 +183,9 @@ fn jp2t2s() -> TestResult {
     let opencc = OpenCC::new([Config::JP2T, Config::T2S])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "jp2t.in"))?;
-    let output = include_str!("data/jp2t2s.ans").trim();
+    let output = include_str!("data/jp2t2s.ans");
 
-    assert_eq!(opencc.convert(input)?, output);
+    assert_eq!(opencc.convert(input)?.trim(), output.trim());
 
     Ok(())
 }
