@@ -1,5 +1,7 @@
 name: Release-plz
 
+permissions: {}
+
 on:
   push:
     branches:
@@ -7,12 +9,11 @@ on:
     tags-ignore:
       - "**"
 
-permissions:
-  contents: write
-  pull-requests: write
-
 jobs:
   release-plz:
+    permissions:
+      contents: write
+      pull-requests: write
     uses: TerakomariGandesblood/github-workflows/.github/workflows/rust-release-plz.yml@main
     secrets:
       RELEASE_PLZ_TOKEN: ${{ secrets.GITHUB_TOKEN }}

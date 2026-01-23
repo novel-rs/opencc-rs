@@ -1,5 +1,7 @@
 name: Check
 
+permissions: {}
+
 on:
   push:
     branches:
@@ -13,11 +15,6 @@ on:
       - "main"
     paths-ignore:
       - "**.md"
-
-permissions:
-  contents: read
-  checks: write
-  pull-requests: read
 
 jobs:
   check:
