@@ -14,9 +14,9 @@ fmt:
     just --fmt --unstable
 
 check:
-    prek run --all-files --skip opencc-sys/OpenCC
-    cargo deny --workspace --all-features check
-    cargo clippy --workspace --all-targets --all-features -- --deny warnings
+    prek run --all-files
+    cargo deny --workspace --all-features --locked check
+    cargo clippy --workspace --all-targets --all-features --locked -- --deny warnings
 
 test:
     cargo nextest run --workspace --all-targets --all-features --locked
