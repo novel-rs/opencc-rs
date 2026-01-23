@@ -6,10 +6,7 @@ use testresult::TestResult;
 
 macro_rules! TESTCASES_PREFIX {
     () => {
-        concat!(
-            env!("CARGO_MANIFEST_DIR"),
-            "/opencc-sys/OpenCC/test/testcases/",
-        )
+        concat!(env!("CARGO_MANIFEST_DIR"), "/tests/data/",)
     };
 }
 
@@ -186,7 +183,7 @@ fn jp2t2s() -> TestResult {
     let opencc = OpenCC::new([Config::JP2T, Config::T2S])?;
 
     let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "jp2t.in"))?;
-    let output = include_str!("jp2t2s.ans").trim();
+    let output = include_str!("data/jp2t2s.ans").trim();
 
     assert_eq!(opencc.convert(input)?, output);
 
