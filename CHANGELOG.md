@@ -14,6 +14,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.1](https://github.com/novel-rs/opencc-rs/compare/opencc-rs-v0.5.0...opencc-rs-v0.5.1) - 2026-02-20
+
+### <!-- 6 -->🧪 Testing
+
+- make test pass
+- make test pass
+
+### <!-- 7 -->⚙️ Miscellaneous Tasks
+
+- add allow dirty
+- update check commands
+- change github action permissions
+
 ## [0.4.10](https://github.com/novel-rs/opencc-rs/compare/opencc-rs-v0.4.9...opencc-rs-v0.4.10) - 2025-06-10
 
 ### <!-- 3 -->📚 Documentation
