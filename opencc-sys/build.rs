@@ -22,6 +22,7 @@ fn main() {
         .define("ENABLE_GTEST", "OFF")
         .define("ENABLE_BENCHMARK", "OFF")
         .define("ENABLE_DARTS", "OFF")
+        .define("BUILD_OPENCC_JIEBA_PLUGIN", "OFF")
         .define("BUILD_PYTHON", "OFF")
         .define("BUILD_TESTING", "OFF")
         .define("USE_SYSTEM_DARTS", "OFF")
@@ -38,7 +39,7 @@ fn main() {
     let mut marisa = cfg.build_target("marisa").build();
     let mut opencc = cfg.build_target("libopencc").build();
 
-    marisa = marisa.join("build").join("deps").join("marisa-0.2.6");
+    marisa = marisa.join("build").join("deps").join("marisa-0.3.1");
     opencc = opencc.join("build").join("src");
     if cfg!(windows) {
         if !marisa.join("libmarisa.a").exists() {
