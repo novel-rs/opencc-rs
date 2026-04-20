@@ -28,6 +28,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - update check commands
 - change github action permissions
 
+## [0.5.1](https://github.com/novel-rs/opencc-rs/compare/opencc-rs-v0.5.0...opencc-rs-v0.5.1) - 2026-04-20
+
+### <!-- 6 -->🧪 Testing
+
+- make test pass
+- make test pass
+
+### <!-- 7 -->⚙️ Miscellaneous Tasks
+
+- update gitleaks to v8.30.1 and add exclude for jieba plugin
+- add allow dirty
+- update check commands
+- change github action permissions
+
 ## [0.4.10](https://github.com/novel-rs/opencc-rs/compare/opencc-rs-v0.4.9...opencc-rs-v0.4.10) - 2025-06-10
 
 ### <!-- 3 -->📚 Documentation
