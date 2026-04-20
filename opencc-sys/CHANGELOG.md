@@ -14,6 +14,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.1+1.3.0](https://github.com/novel-rs/opencc-rs/compare/opencc-sys-v0.4.0+1.2.0...opencc-sys-v0.4.1+1.3.0) - 2026-04-20
+
+### <!-- 7 -->⚙️ Miscellaneous Tasks
+
+- update gitleaks to v8.30.1 and add exclude for jieba plugin
+
 ## [0.3.7+1.1.9](https://github.com/novel-rs/opencc-rs/compare/opencc-sys-v0.3.6+1.1.9...opencc-sys-v0.3.7+1.1.9) - 2025-06-10
 
 ### <!-- 3 -->📚 Documentation
