@@ -20,6 +20,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - bump version
 
+## [0.5.2](https://github.com/novel-rs/opencc-rs/compare/opencc-rs-v0.5.1...opencc-rs-v0.5.2) - 2026-05-11
+
+### <!-- 7 -->⚙️ Miscellaneous Tasks
+
+- bump version
+
 ## [0.5.1](https://github.com/novel-rs/opencc-rs/compare/opencc-rs-v0.5.0...opencc-rs-v0.5.1) - 2026-04-20
 
 ### <!-- 6 -->🧪 Testing
