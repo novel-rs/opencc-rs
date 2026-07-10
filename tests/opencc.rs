@@ -1,191 +1,65 @@
+use std::collections::HashMap;
 use std::fs;
 
 use opencc_rs::{Config, OpenCC};
 use pretty_assertions::assert_eq;
+use serde::Deserialize;
 use testresult::TestResult;
 
-macro_rules! TESTCASES_PREFIX {
-    () => {
-        concat!(env!("CARGO_MANIFEST_DIR"), "/tests/data/",)
-    };
+#[derive(Debug, Deserialize)]
+struct TestCases {
+    cases: Vec<TestCase>,
+}
+
+#[derive(Debug, Deserialize)]
+struct TestCase {
+    id: String,
+    input: String,
+    expected: HashMap<String, String>,
 }
 
 #[test]
-fn hk2s() -> TestResult {
-    let opencc = OpenCC::new([Config::HK2S])?;
+fn all() -> TestResult {
+    let test_cases = fs::read_to_string(format!(
+        "{}/tests/testcases.json",
+        env!("CARGO_MANIFEST_DIR")
+    ))?;
+    let test_cases: TestCases = serde_json::from_str(&test_cases)?;
 
-    let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "hk2s.in"))?;
-    let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "hk2s.ans"))?;
+    for case in test_cases.cases {
+        for (config_name, expected) in &case.expected {
+            let opencc = OpenCC::new([config_from_name(config_name)])?;
+            let actual = opencc.convert(&case.input)?;
 
-    assert_eq!(opencc.convert(input)?.trim(), output.trim());
+            assert_eq!(
+                expected, &actual,
+                "case `{}` failed for config `{}` with input {:?}",
+                case.id, config_name, case.input
+            );
+        }
+    }
 
     Ok(())
 }
 
-#[test]
-fn hk2t() -> TestResult {
-    let opencc = OpenCC::new([Config::HK2T])?;
-
-    let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "hk2t.in"))?;
-    let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "hk2t.ans"))?;
-
-    assert_eq!(opencc.convert(input)?.trim(), output.trim());
-
-    Ok(())
-}
-
-#[test]
-fn jp2t() -> TestResult {
-    let opencc = OpenCC::new([Config::JP2T])?;
-
-    let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "jp2t.in"))?;
-    let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "jp2t.ans"))?;
-
-    assert_eq!(opencc.convert(input)?.trim(), output.trim());
-
-    Ok(())
-}
-
-#[test]
-fn s2hk() -> TestResult {
-    let opencc = OpenCC::new([Config::S2HK])?;
-
-    let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2hk.in"))?;
-    let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2hk.ans"))?;
-
-    assert_eq!(opencc.convert(input)?.trim(), output.trim());
-
-    Ok(())
-}
-
-#[test]
-fn s2t() -> TestResult {
-    let opencc = OpenCC::new([Config::S2T])?;
-
-    let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2t.in"))?;
-    let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2t.ans"))?;
-
-    assert_eq!(opencc.convert(input)?.trim(), output.trim());
-
-    Ok(())
-}
-
-#[test]
-fn s2tw() -> TestResult {
-    let opencc = OpenCC::new([Config::S2TW])?;
-
-    let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2tw.in"))?;
-    let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2tw.ans"))?;
-
-    assert_eq!(opencc.convert(input)?.trim(), output.trim());
-
-    Ok(())
-}
-
-#[test]
-fn s2twp() -> TestResult {
-    let opencc = OpenCC::new([Config::S2TWP])?;
-
-    let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2twp.in"))?;
-    let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "s2twp.ans"))?;
-
-    assert_eq!(opencc.convert(input)?.trim(), output.trim());
-
-    Ok(())
-}
-
-#[test]
-fn t2hk() -> TestResult {
-    let opencc = OpenCC::new([Config::T2HK])?;
-
-    let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "t2hk.in"))?;
-    let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "t2hk.ans"))?;
-
-    assert_eq!(opencc.convert(input)?.trim(), output.trim());
-
-    Ok(())
-}
-
-#[test]
-fn t2jp() -> TestResult {
-    let opencc = OpenCC::new([Config::T2JP])?;
-
-    let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "t2jp.in"))?;
-    let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "t2jp.ans"))?;
-
-    assert_eq!(opencc.convert(input)?.trim(), output.trim());
-
-    Ok(())
-}
-
-#[test]
-fn t2s() -> TestResult {
-    let opencc = OpenCC::new([Config::T2S])?;
-
-    let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "t2s.in"))?;
-    let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "t2s.ans"))?;
-
-    assert_eq!(opencc.convert(input)?.trim(), output.trim());
-
-    Ok(())
-}
-
-#[test]
-fn tw2s() -> TestResult {
-    let opencc = OpenCC::new([Config::TW2S])?;
-
-    let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2s.in"))?;
-    let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2s.ans"))?;
-
-    assert_eq!(opencc.convert(input)?.trim(), output.trim());
-
-    Ok(())
-}
-
-#[test]
-fn tw2sp() -> TestResult {
-    let opencc = OpenCC::new([Config::TW2SP])?;
-
-    let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2sp.in"))?;
-    let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2sp.ans"))?;
-
-    assert_eq!(opencc.convert(input)?.trim(), output.trim());
-
-    Ok(())
-}
-
-#[test]
-fn tw2t() -> TestResult {
-    let opencc = OpenCC::new([Config::TW2T])?;
-
-    let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2t.in"))?;
-    let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2t.ans"))?;
-
-    assert_eq!(opencc.convert(input)?.trim(), output.trim());
-
-    Ok(())
-}
-
-#[test]
-fn t2tw() -> TestResult {
-    let opencc = OpenCC::new([Config::T2TW])?;
-
-    let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2t.ans"))?;
-    let output = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "tw2t.in"))?;
-
-    assert_eq!(opencc.convert(input)?.trim(), output.trim());
-
-    Ok(())
-}
-
-#[test]
-fn jp2t2s() -> TestResult {
-    let opencc = OpenCC::new([Config::JP2T, Config::T2S])?;
-
-    let input = fs::read_to_string(concat!(TESTCASES_PREFIX!(), "jp2t.in"))?;
-    let output = include_str!("data/jp2t2s.ans");
-
-    assert_eq!(opencc.convert(input)?.trim(), output.trim());
-
-    Ok(())
+fn config_from_name(name: &str) -> Config {
+    match name {
+        "s2t" => Config::S2T,
+        "t2s" => Config::T2S,
+        "s2tw" => Config::S2TW,
+        "tw2s" => Config::TW2S,
+        "s2hk" => Config::S2HK,
+        "hk2s" => Config::HK2S,
+        "s2twp" => Config::S2TWP,
+        "tw2sp" => Config::TW2SP,
+        "t2tw" => Config::T2TW,
+        "tw2t" => Config::TW2T,
+        "t2hk" => Config::T2HK,
+        "hk2t" => Config::HK2T,
+        "s2hkp" => Config::S2HKP,
+        "hk2sp" => Config::HK2SP,
+        "t2jp" => Config::T2JP,
+        "jp2t" => Config::JP2T,
+        _ => unreachable!(),
+    }
 }

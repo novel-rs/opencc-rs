@@ -17,15 +17,14 @@ fn main() {
 
     cfg = cfg
         .define("CMAKE_BUILD_TYPE", build_type)
-        .define("BUILD_DOCUMENTATION", "OFF")
         .define("BUILD_SHARED_LIBS", "OFF")
+        .define("BUILD_TESTING", "OFF")
+        .define("BUILD_DOCUMENTATION", "OFF")
+        .define("OPENCC_ENABLE_INSTALL", "OFF")
         .define("ENABLE_GTEST", "OFF")
         .define("ENABLE_BENCHMARK", "OFF")
-        .define("ENABLE_DARTS", "OFF")
         .define("BUILD_OPENCC_JIEBA_PLUGIN", "OFF")
         .define("BUILD_PYTHON", "OFF")
-        .define("BUILD_TESTING", "OFF")
-        .define("USE_SYSTEM_DARTS", "OFF")
         .define("USE_SYSTEM_GOOGLE_BENCHMARK", "OFF")
         .define("USE_SYSTEM_GTEST", "OFF")
         .define("USE_SYSTEM_MARISA", "OFF")

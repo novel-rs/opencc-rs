@@ -101,108 +101,173 @@ unsafe impl Sync for OpenCC {}
 
 /// Configurations
 pub enum Config {
-    /// Traditional Chinese (Hong Kong Standard) to Simplified Chinese
-    HK2S,
-    /// Traditional Chinese (Hong Kong Standard) to Traditional Chinese
-    HK2T,
-    /// New Japanese Kanji (Shinjitai) to Traditional Chinese Characters (Kyūjitai)
-    JP2T,
-    /// Simplified Chinese to Traditional Chinese
+    /// Simplified Chinese to Traditional Chinese (OpenCC Standard)
     S2T,
+    /// Traditional Chinese (OpenCC Standard) to Simplified Chinese
+    T2S,
     /// Simplified Chinese to Traditional Chinese (Taiwan Standard)
     S2TW,
-    /// Simplified Chinese to Traditional Chinese (Taiwan Standard) with Taiwanese idiom
-    S2TWP,
-    /// Traditional Chinese (OpenCC Standard) to Hong Kong Standard
-    T2HK,
-    /// Traditional Chinese Characters (Kyūjitai) to New Japanese Kanji (Shinjitai)
-    T2JP,
-    /// Traditional Chinese (OpenCC Standard) to Taiwan Standard
-    T2TW,
-    /// Traditional Chinese to Simplified Chinese
-    T2S,
-    /// Simplified Chinese to Traditional Chinese (Hong Kong Standard)
-    S2HK,
     /// Traditional Chinese (Taiwan Standard) to Simplified Chinese
     TW2S,
-    /// Traditional Chinese (Taiwan Standard) to Simplified Chinese with Mainland Chinese idiom
+    /// Simplified Chinese to Traditional Chinese (Hong Kong variant)
+    S2HK,
+    /// Traditional Chinese (Hong Kong variant) to Simplified Chinese
+    HK2S,
+    /// Simplified Chinese to Traditional Chinese (Taiwan Standard, with Taiwan Phrases)
+    S2TWP,
+    /// Traditional Chinese (Taiwan Standard) to Simplified Chinese (Mainland China Phrases)
     TW2SP,
-    /// Traditional Chinese (Taiwan Standard) to Traditional Chinese
+    /// Traditional Chinese (OpenCC Standard) to Traditional Chinese (Taiwan Standard)
+    T2TW,
+    /// Traditional Chinese (Taiwan Standard) to Traditional Chinese (OpenCC Standard)
     TW2T,
+    /// Traditional Chinese (OpenCC Standard) to Traditional Chinese (Hong Kong variant)
+    T2HK,
+    /// Traditional Chinese (Hong Kong variant) to Traditional Chinese (OpenCC Standard)
+    HK2T,
+    /// Simplified Chinese to Traditional Chinese (Hong Kong variant, with Hong Kong Phrases)
+    S2HKP,
+    /// Traditional Chinese (Hong Kong variant) to Simplified Chinese (Mainland China Phrases)
+    HK2SP,
+    /// Old Japanese Kanji (Kyūjitai) to New Japanese Kanji (Shinjitai)
+    T2JP,
+    /// New Japanese Kanji (Shinjitai) to Old Japanese Kanji (Kyūjitai)
+    JP2T,
 }
 
 impl Config {
     fn get_data(&self) -> Vec<&opencc_sys::Data> {
+        use opencc_sys::*;
+
         match self {
-            Config::HK2S => vec![
-                &opencc_sys::HK2S_JSON,
-                &opencc_sys::TSPHRASES_OCD2,
-                &opencc_sys::HKVARIANTS_REV_PHRASES_OCD2,
-                &opencc_sys::HKVARIANTS_REV_OCD2,
-                &opencc_sys::TSCHARACTERS_OCD2,
-            ],
-            Config::HK2T => vec![
-                &opencc_sys::HK2T_JSON,
-                &opencc_sys::HKVARIANTS_REV_PHRASES_OCD2,
-                &opencc_sys::HKVARIANTS_REV_OCD2,
-            ],
-            Config::JP2T => vec![
-                &opencc_sys::JP2T_JSON,
-                &opencc_sys::JPSHINJITAI_PHRASES_OCD2,
-                &opencc_sys::JPSHINJITAI_CHARATERS_OCD2,
-                &opencc_sys::JPVARIANTS_REV_OCD2,
-            ],
-            Config::S2HK => vec![
-                &opencc_sys::S2HK_JSON,
-                &opencc_sys::STPHRASES_OCD2,
-                &opencc_sys::STCHARACTERS_OCD2,
-                &opencc_sys::HKVARIANTS_OCD2,
-            ],
             Config::S2T => vec![
-                &opencc_sys::S2T_JSON,
-                &opencc_sys::STPHRASES_OCD2,
-                &opencc_sys::STCHARACTERS_OCD2,
+                &S2T_JSON,
+                &CJK_COMPATIBILITY_IDEOGRAPHS_OCD2,
+                &ST_PHRASES_OCD2,
+                &ST_PHRASES_GENERATED_FROM_REGIONAL_PHRASES_OCD2,
+                &ST_CHARACTERS_OCD2,
+            ],
+            Config::T2S => vec![
+                &T2S_JSON,
+                &CJK_COMPATIBILITY_IDEOGRAPHS_OCD2,
+                &TS_PHRASES_OCD2,
+                &TS_CHARACTERS_EXT_OCD2,
+                &TS_CHARACTERS_OCD2,
             ],
             Config::S2TW => vec![
-                &opencc_sys::S2TW_JSON,
-                &opencc_sys::STPHRASES_OCD2,
-                &opencc_sys::STCHARACTERS_OCD2,
-                &opencc_sys::TWVARIANTS_OCD2,
+                &S2TW_JSON,
+                &CJK_COMPATIBILITY_IDEOGRAPHS_OCD2,
+                &ST_PHRASES_OCD2,
+                &ST_PHRASES_GENERATED_FROM_REGIONAL_PHRASES_OCD2,
+                &ST_CHARACTERS_OCD2,
+                &TW_VARIANTS_PHRASES_OCD2,
+                &TW_VARIANTS_OCD2,
+            ],
+            Config::TW2S => vec![
+                &TW2S_JSON,
+                &CJK_COMPATIBILITY_IDEOGRAPHS_OCD2,
+                &TS_PHRASES_OCD2,
+                &TW_VARIANTS_REV_PHRASES_OCD2,
+                &TW_VARIANTS_REV_OCD2,
+                &TS_PHRASES_OCD2,
+                &TS_CHARACTERS_EXT_OCD2,
+                &TS_CHARACTERS_OCD2,
+            ],
+            Config::S2HK => vec![
+                &S2HK_JSON,
+                &CJK_COMPATIBILITY_IDEOGRAPHS_OCD2,
+                &ST_PHRASES_OCD2,
+                &ST_PHRASES_GENERATED_FROM_REGIONAL_PHRASES_OCD2,
+                &ST_CHARACTERS_OCD2,
+                &HK_VARIANTS_PHRASES_OCD2,
+                &HK_VARIANTS_OCD2,
+            ],
+            Config::HK2S => vec![
+                &HK2S_JSON,
+                &CJK_COMPATIBILITY_IDEOGRAPHS_OCD2,
+                &TS_PHRASES_OCD2,
+                &HK_VARIANTS_REV_PHRASES_OCD2,
+                &HK_VARIANTS_REV_OCD2,
+                &TS_PHRASES_OCD2,
+                &TS_CHARACTERS_EXT_OCD2,
+                &TS_CHARACTERS_OCD2,
             ],
             Config::S2TWP => vec![
-                &opencc_sys::S2TWP_JSON,
-                &opencc_sys::STPHRASES_OCD2,
-                &opencc_sys::STCHARACTERS_OCD2,
-                &opencc_sys::TWPHRASES_OCD2,
-                &opencc_sys::TWVARIANTS_OCD2,
-            ],
-            Config::T2HK => vec![&opencc_sys::T2HK_JSON, &opencc_sys::HKVARIANTS_OCD2],
-            Config::T2JP => vec![&opencc_sys::T2JP_JSON, &opencc_sys::JPVARIANTS_OCD2],
-            Config::T2S => vec![
-                &opencc_sys::T2S_JSON,
-                &opencc_sys::TSPHRASES_OCD2,
-                &opencc_sys::TSCHARACTERS_OCD2,
-            ],
-            Config::T2TW => vec![&opencc_sys::T2TW_JSON, &opencc_sys::TWVARIANTS_OCD2],
-            Config::TW2S => vec![
-                &opencc_sys::TW2S_JSON,
-                &opencc_sys::TSPHRASES_OCD2,
-                &opencc_sys::TWVARIANTS_REV_PHRASES_OCD2,
-                &opencc_sys::TWVARIANTS_REV_OCD2,
-                &opencc_sys::TSCHARACTERS_OCD2,
+                &S2TWP_JSON,
+                &CJK_COMPATIBILITY_IDEOGRAPHS_OCD2,
+                &ST_PHRASES_OCD2,
+                &ST_PHRASES_GENERATED_FROM_REGIONAL_PHRASES_OCD2,
+                &ST_CHARACTERS_OCD2,
+                &TW_PHRASES_OCD2,
+                &TW_VARIANTS_PHRASES_OCD2,
+                &TW_VARIANTS_OCD2,
             ],
             Config::TW2SP => vec![
-                &opencc_sys::TW2SP_JSON,
-                &opencc_sys::TSPHRASES_OCD2,
-                &opencc_sys::TWPHRASES_REV_OCD2,
-                &opencc_sys::TWVARIANTS_REV_PHRASES_OCD2,
-                &opencc_sys::TWVARIANTS_REV_OCD2,
-                &opencc_sys::TSCHARACTERS_OCD2,
+                &TW2SP_JSON,
+                &CJK_COMPATIBILITY_IDEOGRAPHS_OCD2,
+                &TS_PHRASES_OCD2,
+                &TW_PHRASES_REV_OCD2,
+                &TW_VARIANTS_REV_PHRASES_OCD2,
+                &TW_VARIANTS_REV_OCD2,
+                &TS_PHRASES_OCD2,
+                &TS_CHARACTERS_EXT_OCD2,
+                &TS_CHARACTERS_OCD2,
+            ],
+            Config::T2TW => vec![
+                &T2TW_JSON,
+                &CJK_COMPATIBILITY_IDEOGRAPHS_OCD2,
+                &TW_VARIANTS_PHRASES_OCD2,
+                &TW_VARIANTS_OCD2,
             ],
             Config::TW2T => vec![
-                &opencc_sys::TW2T_JSON,
-                &opencc_sys::TWVARIANTS_REV_PHRASES_OCD2,
-                &opencc_sys::TWVARIANTS_REV_OCD2,
+                &TW2T_JSON,
+                &CJK_COMPATIBILITY_IDEOGRAPHS_OCD2,
+                &TW_VARIANTS_REV_PHRASES_OCD2,
+                &TW_VARIANTS_REV_OCD2,
+            ],
+            Config::T2HK => vec![
+                &T2HK_JSON,
+                &CJK_COMPATIBILITY_IDEOGRAPHS_OCD2,
+                &HK_VARIANTS_PHRASES_OCD2,
+                &HK_VARIANTS_OCD2,
+            ],
+            Config::HK2T => vec![
+                &HK2T_JSON,
+                &CJK_COMPATIBILITY_IDEOGRAPHS_OCD2,
+                &HK_VARIANTS_REV_PHRASES_OCD2,
+                &HK_VARIANTS_REV_OCD2,
+            ],
+            Config::S2HKP => vec![
+                &S2HKP_JSON,
+                &CJK_COMPATIBILITY_IDEOGRAPHS_OCD2,
+                &ST_PHRASES_OCD2,
+                &ST_PHRASES_GENERATED_FROM_REGIONAL_PHRASES_OCD2,
+                &ST_CHARACTERS_OCD2,
+                &HK_PHRASES_OCD2,
+                &HK_VARIANTS_PHRASES_OCD2,
+                &HK_VARIANTS_OCD2,
+            ],
+            Config::HK2SP => vec![
+                &HK2SP_JSON,
+                &CJK_COMPATIBILITY_IDEOGRAPHS_OCD2,
+                &TS_PHRASES_OCD2,
+                &HK_PHRASES_REV_OCD2,
+                &HK_VARIANTS_REV_PHRASES_OCD2,
+                &HK_VARIANTS_REV_OCD2,
+                &TS_PHRASES_OCD2,
+                &TS_CHARACTERS_EXT_OCD2,
+                &TS_CHARACTERS_OCD2,
+            ],
+            Config::T2JP => vec![
+                &T2JP_JSON,
+                &CJK_COMPATIBILITY_IDEOGRAPHS_OCD2,
+                &JP_SHINJITAI_CHARACTERS_REV_OCD2,
+            ],
+            Config::JP2T => vec![
+                &JP2T_JSON,
+                &CJK_COMPATIBILITY_IDEOGRAPHS_OCD2,
+                &JP_SHINJITAI_PHRASES_OCD2,
+                &JP_SHINJITAI_CHARATERS_OCD2,
             ],
         }
     }
