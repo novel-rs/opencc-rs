@@ -25,6 +25,7 @@ fn main() {
         .define("ENABLE_BENCHMARK", "OFF")
         .define("BUILD_OPENCC_JIEBA_PLUGIN", "OFF")
         .define("BUILD_PYTHON", "OFF")
+        .define("USE_SYSTEM_DARTS", "OFF")
         .define("USE_SYSTEM_GOOGLE_BENCHMARK", "OFF")
         .define("USE_SYSTEM_GTEST", "OFF")
         .define("USE_SYSTEM_MARISA", "OFF")
