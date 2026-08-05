@@ -21,13 +21,13 @@ members = ["opencc-sys", "."]
 opencc-sys = { version = "0.5.1", path = "opencc-sys" }
 
 # https://github.com/rust-lang/libc
-libc = { version = "0.2.186", default-features = false, features = ["std"] }
+libc = { version = "0.2.189", default-features = false, features = ["std"] }
 # https://github.com/Stebalien/tempfile
 tempfile = { version = "3.27.0", default-features = false, features = [
   "getrandom",
 ] }
 # https://github.com/dtolnay/thiserror
-thiserror = { version = "2.0.18", default-features = false, features = ["std"] }
+thiserror = { version = "2.0.19", default-features = false, features = ["std"] }
 
 [dev-dependencies]
 # https://github.com/rust-pretty-assertions/rust-pretty-assertions
@@ -37,11 +37,11 @@ pretty_assertions = { version = "1.4.1", default-features = false, features = [
 # https://github.com/wiktor-k/testresult
 testresult = { version = "0.4.1", default-features = false }
 # https://github.com/serde-rs/serde
-serde = { version = "1.0.228", default-features = false, features = [
+serde = { version = "1.0.229", default-features = false, features = [
   "std",
   "derive",
 ] }
 # https://github.com/serde-rs/json
-serde_json = { version = "1.0.150", default-features = false, features = [
+serde_json = { version = "1.0.151", default-features = false, features = [
   "std",
 ] }
