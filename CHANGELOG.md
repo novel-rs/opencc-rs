@@ -14,6 +14,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.1](https://github.com/novel-rs/opencc-rs/compare/opencc-rs-v0.6.0...opencc-rs-v0.6.1) - 2026-08-05
+
+### <!-- 0 -->🚀 Features
+
+- opencc 1.4.1
+
+### <!-- 7 -->⚙️ Miscellaneous Tasks
+
+- update msrv to 1.97.0
+
 ## [0.5.2](https://github.com/novel-rs/opencc-rs/compare/opencc-rs-v0.5.1...opencc-rs-v0.5.2) - 2026-05-11
 
 ### <!-- 7 -->⚙️ Miscellaneous Tasks
