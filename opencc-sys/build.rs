@@ -17,9 +17,9 @@ fn main() {
 
     cfg = cfg
         .define("CMAKE_BUILD_TYPE", build_type)
-        .define("BUILD_SHARED_LIBS", "OFF")
         .define("BUILD_TESTING", "OFF")
         .define("BUILD_DOCUMENTATION", "OFF")
+        .define("BUILD_SHARED_LIBS", "OFF")
         .define("OPENCC_ENABLE_INSTALL", "OFF")
         .define("ENABLE_GTEST", "OFF")
         .define("ENABLE_BENCHMARK", "OFF")

@@ -22,6 +22,29 @@ OpenCC bindings for Rust
 - CMake
 - Python / Python3
 
+## Build OpenCC
+
+```bash
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release \
+-DBUILD_TESTING=OFF \
+-DBUILD_DOCUMENTATION=OFF \
+-DBUILD_SHARED_LIBS=OFF \
+-DOPENCC_ENABLE_INSTALL=OFF \
+-DENABLE_GTEST=OFF \
+-DENABLE_BENCHMARK=OFF \
+-DBUILD_OPENCC_JIEBA_PLUGIN=OFF \
+-DBUILD_PYTHON=OFF \
+-DUSE_SYSTEM_DARTS=OFF \
+-DUSE_SYSTEM_GOOGLE_BENCHMARK=OFF \
+-DUSE_SYSTEM_GTEST=OFF \
+-DUSE_SYSTEM_MARISA=OFF \
+-DUSE_SYSTEM_PYBIND11=OFF \
+-DUSE_SYSTEM_RAPIDJSON=OFF \
+-DUSE_SYSTEM_TCLAP=OFF
+
+cmake --build build --config Release -j16
+```
+
 ## Contributing
 
 You should read [CONTRIBUTING](https://github.com/novel-rs/opencc-rs/blob/main/CONTRIBUTING.md) first
