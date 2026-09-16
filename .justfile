@@ -1,5 +1,5 @@
 update:
-    prek auto-update
+    prek update
     cargo upgrade --incompatible
     cargo update
     cd opencc-sys

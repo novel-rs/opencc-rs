@@ -24,6 +24,6 @@ link-cplusplus = { version = "1.0.12", default-features = false }
 # https://github.com/rust-lang/cmake-rs
 cmake = { version = "0.1.58", default-features = false }
 # https://github.com/rust-lang/rust-bindgen
-bindgen = { version = "0.72.1", default-features = false, features = [
+bindgen = { version = "0.73.2", default-features = false, features = [
   "runtime",
 ] }
