@@ -9,12 +9,13 @@ update:
 
 fmt:
     cargo +nightly fmt
-    prettier --write .
+    biome format --write .
     taplo fmt *toml
-    just --fmt --unstable
+    just --fmt
 
 check:
     prek run --all-files
+    biome ci .
     cargo deny --workspace --all-features --locked check
     cargo clippy --workspace --all-targets --all-features --locked -- --deny warnings
 

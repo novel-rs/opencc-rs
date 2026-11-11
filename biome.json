@@ -1,0 +1,10 @@
+{
+	"files": {
+		"includes": ["**", "!opencc-sys", "!CHANGELOG.md"]
+	},
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	}
+}

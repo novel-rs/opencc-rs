@@ -40,3 +40,4 @@ repos:
 ci:
   autofix_prs: false
   autoupdate_commit_msg: "chore: pre-commit autoupdate"
+  autoupdate_schedule: monthly
